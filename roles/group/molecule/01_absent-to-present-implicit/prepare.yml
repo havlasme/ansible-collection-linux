@@ -1,0 +1,9 @@
+---
+- name: "prepare"
+  hosts: "all"
+
+  tasks:
+  - name: "prepare group state absent -> present"
+    ansible.builtin.group:
+      name: "absent-to-present"
+      state: "absent"

@@ -1,0 +1,25 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: podman
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+platforms:
+- name: linux-hostname-debian
+  image: docker.io/pycontribs/debian:latest
+  pre_build_image: true
+  capabilities:
+  - SYS_ADMIN
+provisioner:
+  name: ansible
+  lint: |
+    set -e
+    ansible-lint
+verifier:
+  name: ansible
+  lint: |
+    set -e
+    ansible-lint

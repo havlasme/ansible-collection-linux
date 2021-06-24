@@ -1,0 +1,9 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the previously present user is present"
+    ansible.builtin.shell: "getent passwd present-to-present"
+    changed_when: false

@@ -1,0 +1,11 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "user"
+    vars:
+      linux_user:
+      - name: "present-to-absent"
+        state: "absent"

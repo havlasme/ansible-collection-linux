@@ -1,0 +1,36 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the previously absent authorized key is present"
+    ansible.builtin.lineinfile:
+      path: "/home/authorized-key-management/.ssh/authorized_keys"
+      line: >-
+        ecdsa-sha2-nistp256
+        AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPzqgmM8BnXLd8CSNuz2kJkHrMZtgP+9Vj6+YQMhjRD+hpIgYdUPFkVwaSiLx0Vf/dVFGAfamCrK051OkrOtAP8=
+        authorized-key-management-absent-to-present
+  - name: "assert that the previously present authorized key is present"
+    ansible.builtin.lineinfile:
+      path: "/home/authorized-key-management/.ssh/authorized_keys"
+      line: >-
+        ecdsa-sha2-nistp256
+        AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPw1FV72ns3vMhujuJXrkxZ4qG2MXatdv1NtRYwtC736qMeM9oH8u5ty3QKZgN8cHmN/r+ecn4yj0nzc2nR94Mw=
+        authorized-key-management-present-to-present
+  - name: "assert that the previously absent authorized key is absent"
+    ansible.builtin.lineinfile:
+      path: "/home/authorized-key-management/.ssh/authorized_keys"
+      line: >-
+        ecdsa-sha2-nistp256
+        AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHvq541P1a84xxi7fu+ZOYSpSqSOlQEjCjG06LoSvM//wDbZgmjXdh3VBognIqhzD7Lcdo5eDFfiAPiTnBRamyk=
+        authorized-key-management-absent-to-absent
+      state: "absent"
+  - name: "assert that the previously present authorized key is absent"
+    ansible.builtin.lineinfile:
+      path: "/home/authorized-key-management/.ssh/authorized_keys"
+      line: >-
+        ecdsa-sha2-nistp256
+        AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGWXFFtgNn2f3CNWAQFAedx2+tGR0jRJMDeazS28JgU8ZebJ09bXDyKrdwH+kYyF/5cM+P9jSQ38MWQHS+YCOd4=
+        authorized-key-management-present-to-absent
+      state: "absent"

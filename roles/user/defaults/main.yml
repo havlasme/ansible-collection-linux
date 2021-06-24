@@ -1,0 +1,18 @@
+---
+# the user list
+linux_user: [ ]
+# - name: string
+#   comment: string
+#   home: string
+#   password: string
+#   shell: string
+#   system: boolean
+#   uid: integer
+#   state: string
+#   authorized_key: [ ]
+#   - key: string
+#     key_options: string
+#     comment: string
+#     exclusive: boolean
+#     user: string
+#     state: string

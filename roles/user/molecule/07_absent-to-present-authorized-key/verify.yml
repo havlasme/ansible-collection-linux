@@ -1,0 +1,13 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the previously absent user's authorized key is present"
+    ansible.builtin.lineinfile:
+      path: "/home/absent-to-present-authorized-key/.ssh/authorized_keys"
+      line: >-
+        ecdsa-sha2-nistp256
+        AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDwP3Ydc0NGLJ76V/lXVvIHnQ/2+fJWeVMYvlFpZiNt4G3Oy4v7pmVaaG3NwJu3HEiwSBsmCxbx6wUVYtGyxwls=
+        absent-to-present-authorized-key

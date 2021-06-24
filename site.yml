@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - import_role:
+      name: swap
+    vars:
+      linux_swap_size_bytes: 1024M
+      linux_swap_state: present
+      linux_swap_cryptsetup_state: absent

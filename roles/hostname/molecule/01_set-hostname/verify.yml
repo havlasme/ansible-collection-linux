@@ -1,0 +1,10 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the hostname is present"
+    ansible.builtin.lineinfile:
+      path: "/etc/hostname"
+      line: "testcase"

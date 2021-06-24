@@ -1,0 +1,12 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "sysctl"
+    vars:
+      linux_sysctl:
+      - name: "vm.swappiness"
+        state: "absent"
+        reload: "no"

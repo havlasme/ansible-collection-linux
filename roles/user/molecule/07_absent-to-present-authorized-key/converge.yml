@@ -1,0 +1,15 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "user"
+    vars:
+      linux_user:
+      - name: "absent-to-present-authorized-key"
+        authorized_key:
+        - key: >-
+            ecdsa-sha2-nistp256
+            AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDwP3Ydc0NGLJ76V/lXVvIHnQ/2+fJWeVMYvlFpZiNt4G3Oy4v7pmVaaG3NwJu3HEiwSBsmCxbx6wUVYtGyxwls=
+            absent-to-present-authorized-key

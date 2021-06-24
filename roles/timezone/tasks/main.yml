@@ -1,0 +1,5 @@
+---
+- name: "(linux.timezone) manage system timezone"
+  community.general.timezone:
+    name: "{{ linux_timezone | mandatory }}"
+    hwclock: "{{ linux_timezone_hwclock | default(omit) }}"

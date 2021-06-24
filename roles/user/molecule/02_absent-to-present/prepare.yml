@@ -1,0 +1,9 @@
+---
+- name: "prepare"
+  hosts: "all"
+
+  tasks:
+  - name: "prepare user state absent -> present"
+    ansible.builtin.user:
+      name: "absent-to-present"
+      state: "absent"

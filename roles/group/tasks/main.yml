@@ -1,0 +1,8 @@
+---
+- name: "(linux.group) create, update, and remove system groups"
+  ansible.builtin.group:
+    name: "{{ item.name | mandatory }}"
+    gid: "{{ item.gid | d(omit) }}"
+    system: "{{ item.system | d(omit) }}"
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ linux_group }}"

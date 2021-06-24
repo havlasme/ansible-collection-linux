@@ -1,0 +1,10 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the timezone is present"
+    ansible.builtin.lineinfile:
+      path: "/etc/timezone"
+      line: "Europe/Bratislava"

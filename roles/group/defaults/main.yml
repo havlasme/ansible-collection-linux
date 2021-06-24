@@ -1,0 +1,7 @@
+---
+# the group list
+linux_group: [ ]
+# - name: string
+#   gid: integer
+#   system: boolean
+#   state: string

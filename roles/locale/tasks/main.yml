@@ -1,0 +1,15 @@
+---
+- name: "(linux.locale) include os specific variables"
+  include_vars: "{{ ansible_os_family | lower }}.yml"
+
+- name: "(linux.locale) install required packages"
+  ansible.builtin.package:
+    name: "{{ locale_package }}"
+    state: "present"
+  when: linux_locale | length > 0
+
+- name: "(linux.locale) manage system locale"
+  community.general.locale_gen:
+    name: "{{ item.name | mandatory }}"
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ linux_locale }}"

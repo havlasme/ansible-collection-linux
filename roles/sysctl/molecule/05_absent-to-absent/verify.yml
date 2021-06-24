@@ -1,0 +1,11 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the previously absent config is absent"
+    ansible.builtin.lineinfile:
+      path: "/etc/sysctl.conf"
+      line: "vm.swappiness=10"
+      state: "absent"

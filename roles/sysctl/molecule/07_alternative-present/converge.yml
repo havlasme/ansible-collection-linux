@@ -1,0 +1,13 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "sysctl"
+    vars:
+      linux_sysctl:
+      - name: "vm.swappiness"
+        path: "/etc/sysctl.d/40-alternative-present.conf"
+        value: "10"
+        reload: "no"

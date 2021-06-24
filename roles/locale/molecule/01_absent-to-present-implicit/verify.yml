@@ -1,0 +1,9 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the previously absent locale is present"
+    ansible.builtin.shell: "locale -a | grep -q sk_SK.utf8"
+    changed_when: false

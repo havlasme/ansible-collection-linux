@@ -1,0 +1,14 @@
+---
+- name: "(linux.user) create, update, and remove system users"
+  ansible.builtin.user:
+    name: "{{ item.name | mandatory }}"
+    comment: "{{ item.comment | default(omit) }}"
+    home: "{{ item.home | default(omit) }}"
+    password: "{{ item.password | default(omit) }}"
+    shell: "{{ item.shell | default(omit) }}"
+    system: "{{ item.system | default(omit) }}"
+    uid: "{{ item.uid | default(omit) }}"
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ linux_user }}"
+
+- import_tasks: "authorized-key.yml"

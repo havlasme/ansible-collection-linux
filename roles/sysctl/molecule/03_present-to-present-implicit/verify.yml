@@ -1,0 +1,10 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the previously present config is present"
+    ansible.builtin.lineinfile:
+      path: "/etc/sysctl.conf"
+      line: "vm.swappiness=10"

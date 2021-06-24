@@ -1,0 +1,8 @@
+---
+# the sysctl configuration
+linux_sysctl: [ ]
+# - name: string
+#   reload: boolean
+#   sysctl_file: string
+#   value: string
+#   state: string
