@@ -1,4 +1,5 @@
-# Ansible Collection - havlasme.linux
+Ansible Collection - havlasme.linux
+===================================
 
 [![Apache-2.0 license][license-image]][license-link]
 
