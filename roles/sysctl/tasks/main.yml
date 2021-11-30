@@ -12,7 +12,7 @@
   ansible.posix.sysctl:
     name: "{{ item.name | mandatory }}"
     reload: "{{ item.reload | default('yes') }}"
-    sysctl_file: "{{ item.path | default(omit) }}"
+    sysctl_file: "{{ item.sysctl_file | default(omit) }}"
     value: "{{ item.value | default(omit) }}"
     state: "{{ item.state | default('present') }}"
   loop: "{{ linux_sysctl }}"
