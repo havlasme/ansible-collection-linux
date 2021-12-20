@@ -1,0 +1,13 @@
+---
+# the cron list
+linux_cron: [ ]
+# - name: string
+#   job: string
+#   user: string
+#   day: string
+#   hour: string
+#   minute: string
+#   month: string
+#   weekday: string
+#   cron_file: string
+#   state: string
