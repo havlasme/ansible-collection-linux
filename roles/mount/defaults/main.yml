@@ -1,0 +1,9 @@
+---
+# the mount point list
+linux_mount: []
+# - name: string
+#   src: string
+#   boot: boolean
+#   fstype: string
+#   opt: string
+#   state: string

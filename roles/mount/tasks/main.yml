@@ -1,0 +1,10 @@
+---
+- name: "(linux.mount) create, update, and remove mount point"
+  ansible.posix.mount:
+    name: "{{ item.name | mandatory }}"
+    src: "{{ item.src | d(omit) }}"
+    boot: "{{ item.boot | d(omit) }}"
+    fstype: "{{ item.fstype | d(omit) }}"
+    opt: "{{ item.opt | d(omit) }}"
+    state: "{{ item.state | d('mounted') }}"
+  loop: "{{ linux_mount }}"
