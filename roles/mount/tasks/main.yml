@@ -5,6 +5,6 @@
     src: "{{ item.src | d(omit) }}"
     boot: "{{ item.boot | d(omit) }}"
     fstype: "{{ item.fstype | d(omit) }}"
-    opt: "{{ item.opt | d(omit) }}"
+    opts: "{{ item.opt | d(omit) }}"
     state: "{{ item.state | d('mounted') }}"
   loop: "{{ linux_mount }}"
