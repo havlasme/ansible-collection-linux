@@ -15,21 +15,18 @@ Role Variables
 
 ```yaml
 # the group list
-linux_group: [ ]
+linux_group: []
 # - name: string
-#   gid: integer
-#   system: boolean
-#   state: string
+#   gid: integer | d(omit)
+#   system: boolean | d(omit)
+#   state: enum('absent', 'present') | d('present')
+
 ```
 
 Dependencies
 ------------
 
-[Ansible.Posix](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html)
-
-```bash
-ansible-galaxy collection install ansible.posix
-```
+None.
 
 Example Playbook
 ----------------
@@ -41,7 +38,7 @@ Example Playbook
       name: havlasme.linux.group
     vars:
       linux_user:
-      - name: root
+      - name: "root"
 ```
 
 License

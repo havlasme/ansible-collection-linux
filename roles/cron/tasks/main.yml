@@ -10,5 +10,5 @@
     month: "{{ item.month | d(omit) }}"
     weekday: "{{ item.weekday | d(omit) }}"
     cron_file: "{{ item.cron_file | d(omit) }}"
-    state: "{{ item.state | default('present') }}"
+    state: "{{ item.state | d('present') }}"
   loop: "{{ linux_cron }}"

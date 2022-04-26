@@ -2,3 +2,4 @@
 - name: "(linux.hostname) manage system hostname"
   ansible.builtin.hostname:
     name: "{{ linux_hostname | mandatory }}"
+  when: "linux_hostname is defined"

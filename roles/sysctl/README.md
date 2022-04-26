@@ -15,12 +15,12 @@ Role Variables
 
 ```yaml
 # the sysctl configuration
-linux_sysctl: [ ]
+linux_sysctl: []
 # - name: string
-#   reload: boolean
-#   sysctl_file: string
-#   value: string
-#   state: string
+#   value: string | d(omit)
+#   reload: boolean | d('yes')
+#   sysctl_file: string | d(omit)
+#   state: enum('absent', 'present') | d('present')
 ```
 
 Dependencies
@@ -43,7 +43,6 @@ Example Playbook
     vars:
       linux_sysctl:
       - name: "vm.swappiness"
-        sysctl_file: "/etc/sysctl.d/40-vm-swappiness.conf"
         value: "10"
 ```
 
@@ -58,4 +57,5 @@ Author Information
 Created by [Tomáš Havlas](https://havlas.me/).
 
 [license-image]: https://img.shields.io/badge/license-Apache2.0-blue.svg?style=flat-square
+
 [license-link]: ../../LICENSE

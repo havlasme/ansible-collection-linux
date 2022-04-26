@@ -1,18 +1,18 @@
 ---
 # the user list
-linux_user: [ ]
+linux_user: []
 # - name: string
-#   comment: string
-#   home: string
-#   password: string
-#   shell: string
-#   system: boolean
-#   uid: integer
-#   state: string
+#   comment: string | d(omit)
+#   group: string | d(omit)
+#   home: string | d(omit)
+#   password: string | d(omit)
+#   shell: string | d(omit)
+#   system: boolean | d(omit)
+#   uid: integer | d(omit)
+#   state: enum('absent', 'present') | d('present')
 #   authorized_key: [ ]
 #   - key: string
-#     key_options: string
-#     comment: string
-#     exclusive: boolean
-#     user: string
-#     state: string
+#     key_options: string | d(omit)
+#     comment: string | d(omit)
+#     exclusive: boolean | d(omit)
+#     state: enum('absent', 'present') | d('present')

@@ -15,9 +15,9 @@ Role Variables
 
 ```yaml
 # the system locale list
-linux_locale: [ ]
+linux_locale: []
 # - name: string
-#   state: string
+#   state: enum('absent', 'present') | d('present')
 ```
 
 Dependencies

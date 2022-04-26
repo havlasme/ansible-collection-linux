@@ -17,17 +17,21 @@ Role Variables
 # the mount point list
 linux_mount: []
 # - name: string
-#   src: string
-#   boot: boolean
-#   fstype: string
-#   opt: string
-#   state: string
+#   src: string | d(omit)
+#   boot: boolean | d(omit)
+#   fstype: string | d(omit)
+#   opts: string | d(omit)
+#   state: enum('absent', 'mounted', 'present', 'umnounted', 'remounted') | d('mounted')
 ```
 
 Dependencies
 ------------
 
 [Ansible.Posix](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html)
+
+```bash
+ansible-galaxy collection install ansible.posix
+```
 
 Example Playbook
 ----------------

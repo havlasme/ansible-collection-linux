@@ -1,8 +1,8 @@
 ---
 # the sysctl configuration
-linux_sysctl: [ ]
+linux_sysctl: []
 # - name: string
-#   reload: boolean
-#   sysctl_file: string
-#   value: string
-#   state: string
+#   value: string | d(omit)
+#   reload: boolean | d('yes')
+#   sysctl_file: string | d(omit)
+#   state: enum('absent', 'present') | d('present')
