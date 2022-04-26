@@ -1,0 +1,13 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "cron"
+    vars:
+      linux_cron:
+      - { name: "test_job_001", job: "/usr/bin/true" }
+      - { name: "test_job_002", job: "/usr/bin/true", state: "present" }
+      - { name: "test_job_003", job: "/usr/bin/true", user: "nobody", day: "1", hour: "22", minute: "30", month: "6", weekday: "3" }
+      - { name: "test_job_004", job: "/usr/bin/true", cron_file: "/etc/cron.d/test_job_004" }

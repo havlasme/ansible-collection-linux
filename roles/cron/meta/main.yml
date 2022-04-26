@@ -1,5 +1,7 @@
 ---
 galaxy_info:
+  role_name: cron
+  namespace: havlasme.linux
   author: havlas.me
   description: linux cron management
   company: havlas.me
@@ -15,4 +17,4 @@ galaxy_info:
   - linux
   - system
 
-dependencies: [ ]
+dependencies: []

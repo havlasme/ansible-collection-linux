@@ -1,0 +1,11 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the cron package is present"
+    ansible.builtin.package:
+      name: "cron"
+      state: "present"
+    changed_when: false

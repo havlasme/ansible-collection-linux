@@ -1,0 +1,10 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "cron"
+    vars:
+      linux_cron:
+      - { name: "test_job_001", job: "/usr/bin/false", user: "root", day: "2", hour: "23", minute: "45", month: "3", weekday: "5" }

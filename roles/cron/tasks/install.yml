@@ -1,0 +1,9 @@
+---
+- name: "(linux.cron) include os specific variables"
+  include_vars: "{{ ansible_os_family | lower }}.yml"
+
+- name: "(linux.cron) install required package"
+  ansible.builtin.package:
+    name: "{{ cron_package }}"
+    state: "present"
+  when: "linux_cron | length > 0"
