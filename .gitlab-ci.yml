@@ -13,7 +13,7 @@ molecule test:
   - apt install -y podman
   - podman info
   - python3 --version
-  - python3 -m pip install ansible molecule molecule[podman] yamllint
+  - python3 -m pip install ansible ansible-lint molecule molecule[podman] yamllint
   - ansible --version
   - molecule --version
   script:
