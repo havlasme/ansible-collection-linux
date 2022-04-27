@@ -6,7 +6,7 @@ stages:
 - test
 
 molecule test:
-  image: python:3.10-buster
+  image: python:3.10
   stage: test
   before_script:
   - apt update
