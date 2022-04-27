@@ -1,9 +1,7 @@
 ---
 galaxy_info:
-  role_name: cron
-  namespace: havlasme.linux
-  author: havlas.me
   description: linux cron management
+  author: havlas.me
   company: havlas.me
   issue_tracker_url: https://gitlab.com/havlas.me/ansible-collection-linux/-/issues
   license: Apache-2.0

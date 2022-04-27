@@ -1,9 +1,0 @@
----
-- name: "verify"
-  hosts: "all"
-  gather_facts: false
-
-  tasks:
-  - name: "assert that the previously absent group is absent"
-    ansible.builtin.shell: "! getent group absent-to-absent"
-    changed_when: false

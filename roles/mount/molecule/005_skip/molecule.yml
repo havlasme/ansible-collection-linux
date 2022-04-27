@@ -1,0 +1,17 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: podman
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+platforms:
+- name: linux-mount-debian
+  image: python:3.10
+  pre_build_image: true
+provisioner:
+  name: ansible
+verifier:
+  name: ansible

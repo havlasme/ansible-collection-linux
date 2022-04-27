@@ -1,0 +1,12 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "group"
+    vars:
+      linux_group:
+      - { name: "test_group_001" }
+      - { name: "test_group_002", state: "present" }
+      - { name: "test_group_003", system: "yes" }

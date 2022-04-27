@@ -11,5 +11,7 @@
     uid: "{{ item.uid | d(omit) }}"
     state: "{{ item.state | d('present') }}"
   loop: "{{ linux_user }}"
+  tags: ["user", "configure"]
 
 - import_tasks: "authorized-key.yml"
+  tags: ["user", "configure"]

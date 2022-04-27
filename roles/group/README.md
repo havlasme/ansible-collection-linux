@@ -20,7 +20,6 @@ linux_group: []
 #   gid: integer | d(omit)
 #   system: boolean | d(omit)
 #   state: enum('absent', 'present') | d('present')
-
 ```
 
 Dependencies
@@ -37,7 +36,7 @@ Example Playbook
   - import_role:
       name: havlasme.linux.group
     vars:
-      linux_user:
+      linux_group:
       - name: "root"
 ```
 

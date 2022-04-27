@@ -1,18 +1,5 @@
 ---
-- name: "(linux.sysctl) include os specific variables"
-  include_vars: "{{ ansible_os_family | lower }}.yml"
-
-- name: "(linux.sysctl) install required package"
-  ansible.builtin.package:
-    name: "{{ sysctl_package }}"
-    state: "present"
-  when: "linux_sysctl | length > 0"
-
-- name: "(linux.sysctl) manage sysctl configuration"
-  ansible.posix.sysctl:
-    name: "{{ item.name | mandatory }}"
-    value: "{{ item.value | d(omit) }}"
-    reload: "{{ item.reload | d('yes') }}"
-    sysctl_file: "{{ item.sysctl_file | d(omit) }}"
-    state: "{{ item.state | d('present') }}"
-  loop: "{{ linux_sysctl }}"
+- import_tasks: "install.yml"
+  tags: ["sysctl", "install"]
+- import_tasks: "configure.yml"
+  tags: ["sysctl", "configure"]

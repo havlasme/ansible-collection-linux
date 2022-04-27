@@ -1,0 +1,13 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the test_mount_001 is absent"
+    ansible.posix.mount:
+      name: "/opt/test_mount_001"
+      src: "tmpfs"
+      fstype: "tmpfs"
+      state: "absent"
+    changed_when: false

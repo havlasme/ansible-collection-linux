@@ -1,0 +1,22 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the test_group_001 is present"
+    ansible.builtin.group:
+      name: "test_group_001"
+      state: "present"
+    changed_when: false
+  - name: "assert that the test_group_002 is present"
+    ansible.builtin.group:
+      name: "test_group_002"
+      system: "yes"
+      state: "present"
+    changed_when: false
+  - name: "assert that the test_group_003 is absent"
+    ansible.builtin.group:
+      name: "test_group_003"
+      state: "absent"
+    changed_when: false

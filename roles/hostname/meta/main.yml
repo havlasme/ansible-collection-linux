@@ -1,7 +1,7 @@
 ---
 galaxy_info:
-  author: havlas.me
   description: linux hostname management
+  author: havlas.me
   company: havlas.me
   issue_tracker_url: https://gitlab.com/havlas.me/ansible-collection-linux/-/issues
   license: Apache-2.0

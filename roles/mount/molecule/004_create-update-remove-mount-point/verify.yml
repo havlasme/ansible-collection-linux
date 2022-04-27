@@ -1,0 +1,28 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the test_mount_001 is present"
+    ansible.posix.mount:
+      name: "/opt/test_mount_001"
+      src: "tmpfs"
+      fstype: "tmpfs"
+      state: "present"
+    changed_when: false
+  - name: "assert that the test_mount_002 is present"
+    ansible.posix.mount:
+      name: "/opt/test_mount_002"
+      src: "tmpfs"
+      fstype: "tmpfs"
+      opts: "ro"
+      state: "present"
+    changed_when: false
+  - name: "assert that the test_mount_003 is absent"
+    ansible.posix.mount:
+      name: "/opt/test_mount_003"
+      src: "tmpfs"
+      fstype: "tmpfs"
+      state: "absent"
+    changed_when: false

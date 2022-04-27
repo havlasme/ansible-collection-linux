@@ -1,0 +1,11 @@
+---
+- name: "prepare"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "group"
+    vars:
+      linux_group:
+      - { name: "test_group_002" }
+      - { name: "test_group_003" }

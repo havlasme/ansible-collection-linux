@@ -15,7 +15,7 @@ Role Variables
 
 ```yaml
 # the system timezone
-linux_timezone: "UTC"
+#linux_timezone: "UTC"
 # set to UTC, to keep hardware clock in UTC timezone
 # set to local, to keep hardware clock in local timezone
 #linux_timezone_hwclock: "UTC"

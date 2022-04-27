@@ -1,0 +1,14 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the test_mount_001 is mounted"
+    ansible.posix.mount:
+      name: "/opt/test_mount_001"
+      src: "tmpfs"
+      fstype: "tmpfs"
+      opts: "ro"
+      state: "mounted"
+    changed_when: false

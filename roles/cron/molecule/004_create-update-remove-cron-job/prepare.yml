@@ -1,0 +1,11 @@
+---
+- name: "prepare"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "cron"
+    vars:
+      linux_cron:
+      - { name: "test_job_002", job: "/usr/bin/false" }
+      - { name: "test_job_003", job: "/usr/bin/true" }

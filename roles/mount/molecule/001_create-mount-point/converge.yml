@@ -1,0 +1,11 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "mount"
+    vars:
+      linux_mount:
+      - { name: "/opt/test_mount_001", src: "tmpfs", fstype: "tmpfs" }
+      - { name: "/opt/test_mount_002", src: "tmpfs", fstype: "tmpfs", state: "mounted" }

@@ -1,0 +1,12 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "sysctl"
+    vars:
+      linux_sysctl:
+      - { name: "vm.swappiness", value: "10", reload: "no" }
+      - { name: "kernel.panic", value: "0", reload: "no" }
+      - { name: "net.ipv4.ip_forward", value: "0", reload: "no", state: "absent" }

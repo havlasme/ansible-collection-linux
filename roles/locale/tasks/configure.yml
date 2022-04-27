@@ -1,0 +1,6 @@
+---
+- name: "(linux.locale) add, and remove system locale"
+  community.general.locale_gen:
+    name: "{{ item.name | mandatory }}"
+    state: "{{ item.state | d('present') }}"
+  loop: "{{ linux_locale }}"

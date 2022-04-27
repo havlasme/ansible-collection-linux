@@ -1,0 +1,24 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the test_job_001 is present"
+    ansible.builtin.cron:
+      name: "test_job_001"
+      job: "/usr/bin/true"
+      state: "present"
+    changed_when: false
+  - name: "assert that the test_job_002 is present"
+    ansible.builtin.cron:
+      name: "test_job_002"
+      job: "/usr/bin/false"
+      state: "present"
+    changed_when: false
+  - name: "assert that the test_job_003 is absent"
+    ansible.builtin.cron:
+      name: "test_job_003"
+      job: "/usr/bin/true"
+      state: "absent"
+    changed_when: false

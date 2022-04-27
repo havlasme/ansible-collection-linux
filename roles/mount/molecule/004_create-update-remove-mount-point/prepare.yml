@@ -1,0 +1,11 @@
+---
+- name: "prepare"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "mount"
+    vars:
+      linux_mount:
+      - { name: "/opt/test_job_002", src: "tmpfs", fstype: "tmpfs" }
+      - { name: "/opt/test_job_003", src: "tmpfs", fstype: "tmpfs" }

@@ -1,0 +1,11 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the procps package is absent"
+    ansible.builtin.package:
+      name: "procps"
+      state: "absent"
+    changed_when: false
