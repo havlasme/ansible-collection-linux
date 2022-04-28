@@ -9,11 +9,9 @@
       name: "vm.swappiness"
       value: "10"
       state: "absent"
-    changed_when: false
   - name: "assert that the kernel.panic is absent"
     ansible.posix.sysctl:
       name: "kernel.panic"
       value: "3"
       sysctl_file: "/etc/sysctl.d/test_job_002"
       state: "absent"
-    changed_when: false

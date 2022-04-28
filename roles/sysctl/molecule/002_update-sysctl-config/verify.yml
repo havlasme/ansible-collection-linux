@@ -10,4 +10,3 @@
       value: "20"
       reload: "no"
       state: "present"
-    changed_when: false

@@ -8,10 +8,8 @@
     ansible.builtin.cron:
       name: "test_job_001"
       state: "absent"
-    changed_when: false
   - name: "assert that the test_job_002 is absent"
     ansible.builtin.cron:
       name: "test_job_002"
       cron_file: "/etc/cron.d/test_job_002"
       state: "absent"
-    changed_when: false

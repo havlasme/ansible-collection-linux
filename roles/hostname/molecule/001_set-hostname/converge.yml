@@ -6,4 +6,4 @@
   - import_role:
       name: "hostname"
     vars:
-      linux_hostname: "testcase"
+      linux_hostname: "test_case_001"

@@ -7,4 +7,4 @@
       name: "mount"
     vars:
       linux_mount:
-      - { name: "/opt/test_job_001", src: "tmpfs", fstype: "tmpfs" }
+      - { name: "/opt/test_job_001", src: "tmpfs", fstype: "tmpfs", opts: "rw" }

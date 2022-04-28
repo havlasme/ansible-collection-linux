@@ -1,0 +1,14 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that test_case_00102 is present"
+    ansible.posix.authorized_key:
+      key: >-
+        ecdsa-sha2-nistp256
+        AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOPhW/l7k3cwk4jqXw+cKoGhAHzqezpT/wryGy45Ei4VgfKi6LJm+djtIlTcS3RET00lWo6Rm/DCAjN+NHXk7e0=
+        test_case_00101
+      comment: "test_case_00101"
+      state: "absent"

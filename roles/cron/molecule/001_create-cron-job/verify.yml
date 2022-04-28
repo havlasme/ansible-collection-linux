@@ -10,14 +10,12 @@
       job: "/usr/bin/true"
       user: "root"
       state: "present"
-    changed_when: false
   - name: "assert that the test_job_002 is present"
     ansible.builtin.cron:
       name: "test_job_002"
       job: "/usr/bin/true"
       user: "root"
       state: "present"
-    changed_when: false
   - name: "assert that the test_job_003 is present"
     ansible.builtin.cron:
       name: "test_job_003"
@@ -29,7 +27,6 @@
       month: "6"
       weekday: "3"
       state: "present"
-    changed_when: false
   - name: "assert that the test_job_004 is present"
     ansible.builtin.cron:
       name: "test_job_004"
@@ -37,4 +34,3 @@
       user: "root"
       cron_file: "/etc/cron.d/test_job_004"
       state: "present"
-    changed_when: false

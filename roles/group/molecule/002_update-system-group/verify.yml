@@ -9,4 +9,3 @@
       name: "test_group_001"
       gid: 1015
       state: "present"
-    changed_when: false

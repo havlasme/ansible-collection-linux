@@ -8,4 +8,3 @@
     ansible.builtin.group:
       name: "test_group_001"
       state: "absent"
-    changed_when: false

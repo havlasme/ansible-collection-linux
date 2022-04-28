@@ -8,4 +8,3 @@
     community.general.locale_gen:
       name: "sk_SK.UTF-8"
       state: "absent"
-    changed_when: false

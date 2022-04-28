@@ -11,4 +11,3 @@
       fstype: "tmpfs"
       opts: "ro"
       state: "mounted"
-    changed_when: false

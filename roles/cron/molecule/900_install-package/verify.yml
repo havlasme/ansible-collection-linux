@@ -8,4 +8,3 @@
     ansible.builtin.package:
       name: "cron"
       state: "present"
-    changed_when: false

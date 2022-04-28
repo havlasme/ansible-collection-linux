@@ -4,7 +4,6 @@
   gather_facts: false
 
   tasks:
-  - name: "assert that the hostname is present"
-    ansible.builtin.lineinfile:
-      path: "/etc/hostname"
-      line: "testcase"
+  - name: "assert that the hostname is set"
+    ansible.builtin.hostname:
+      name: "test_case_001"

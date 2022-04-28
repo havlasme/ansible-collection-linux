@@ -10,11 +10,17 @@
       src: "tmpfs"
       fstype: "tmpfs"
       state: "mounted"
-    changed_when: false
   - name: "assert that the test_mount_002 is mounted"
     ansible.posix.mount:
       name: "/opt/test_mount_002"
       src: "tmpfs"
       fstype: "tmpfs"
       state: "mounted"
-    changed_when: false
+  - name: "assert that the test_mount_003 is mounted"
+    ansible.posix.mount:
+      name: "/opt/test_mount_003"
+      src: "tmpfs"
+      boot: "yes"
+      fstype: "tmpfs"
+      opts: "ro"
+      state: "mounted"

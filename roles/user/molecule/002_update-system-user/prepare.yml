@@ -7,4 +7,5 @@
       name: "user"
     vars:
       linux_user:
-      - { name: "test_user_001" }
+      - { name: "test_user_001", uid: 915 }
+      - { name: "test_user_002", comment: "test_user_002", home: "/opt/test_user_002", shell: "/bin/bash", uid: 916 }

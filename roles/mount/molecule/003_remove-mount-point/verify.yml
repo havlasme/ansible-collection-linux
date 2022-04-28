@@ -10,4 +10,3 @@
       src: "tmpfs"
       fstype: "tmpfs"
       state: "absent"
-    changed_when: false
