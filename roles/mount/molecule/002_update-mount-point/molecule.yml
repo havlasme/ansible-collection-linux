@@ -11,7 +11,8 @@ platforms:
 - name: linux-mount-debian
   image: docker.io/library/python:3.10
   pre_build_image: true
-  privileged: true
+  capabilities:
+  - SYS_ADMIN
 provisioner:
   name: ansible
 verifier:
