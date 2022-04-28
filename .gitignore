@@ -1,4 +1,6 @@
-.cache
+# intellij idea
 .idea
 
+# ansible
+.cache
 /production
