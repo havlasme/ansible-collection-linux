@@ -8,6 +8,12 @@
     ansible.builtin.cron:
       name: "test_job_001"
       job: "/usr/bin/false"
+      state: "present"
+    changed_when: false
+  - name: "assert that the test_job_002 is present"
+    ansible.builtin.cron:
+      name: "test_job_002"
+      job: "/usr/bin/false"
       user: "root"
       day: "2"
       hour: "23"

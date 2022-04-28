@@ -1,0 +1,20 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "user"
+    vars:
+      linux_user:
+      - name: "test_case_001"
+        authorized_key:
+        - key: >-
+            ecdsa-sha2-nistp256
+            AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDwP3Ydc0NGLJ76V/lXVvIHnQ/2+fJWeVMYvlFpZiNt4G3Oy4v7pmVaaG3NwJu3HEiwSBsmCxbx6wUVYtGyxwls=
+            test_case_001_001
+        - key: >-
+            ecdsa-sha2-nistp256
+            AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOPhW/l7k3cwk4jqXw+cKoGhAHzqezpT/wryGy45Ei4VgfKi6LJm+djtIlTcS3RET00lWo6Rm/DCAjN+NHXk7e0=
+            test_case_001_002
+          state: "present"

@@ -1,0 +1,11 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the test_user_001 is absent"
+    ansible.builtin.user:
+      name: "test_user_001"
+      state: "absent"
+    changed_when: false

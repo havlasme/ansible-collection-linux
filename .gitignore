@@ -1,3 +1,6 @@
+# production build
+/dist
+
 # intellij idea
 .idea
 

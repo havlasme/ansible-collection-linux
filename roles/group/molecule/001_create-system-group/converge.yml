@@ -9,4 +9,4 @@
       linux_group:
       - { name: "test_group_001" }
       - { name: "test_group_002", state: "present" }
-      - { name: "test_group_003", system: "yes" }
+      - { name: "test_group_003", gid: 915, system: "yes" }

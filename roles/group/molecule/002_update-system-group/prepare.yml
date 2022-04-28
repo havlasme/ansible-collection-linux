@@ -7,4 +7,4 @@
       name: "group"
     vars:
       linux_group:
-      - { name: "test_group_001" }
+      - { name: "test_group_001", gid: 915 }

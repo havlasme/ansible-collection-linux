@@ -17,6 +17,7 @@
   - name: "assert that the test_group_003 is present"
     ansible.builtin.group:
       name: "test_group_003"
+      gid: 915
       system: "yes"
       state: "present"
     changed_when: false
