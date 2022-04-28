@@ -10,7 +10,9 @@ molecule test:
   stage: test
   before_script:
   - apt update
-  - apt install -y podman
+  - apt install -y fuse-overlayfs podman
+  - echo -e '[storage]\ndriver = "overlay"\n[storage.options.overlay]\nmount_program = "/usr/bin/fuse-overlayfs"\nmountopt = "nodev,metacopy=on"' > /etc/containers/storage.conf
+  - echo -e '[engine]\ncgroup_manager = "cgroupfs"' > /etc/containers/containers.conf
   - podman info
   - python3 --version
   - python3 -m pip install ansible ansible-lint molecule molecule[podman] yamllint
