@@ -3,4 +3,4 @@
   ansible.builtin.hostname:
     name: "{{ linux_hostname | mandatory }}"
   when: "linux_hostname is defined"
-  tags: ["hostname", "configure"]
+  tags: ["role::hostname", "stage::configure"]

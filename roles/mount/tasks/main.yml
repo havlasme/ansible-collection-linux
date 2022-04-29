@@ -8,3 +8,4 @@
     opts: "{{ item.opts | d(omit) }}"
     state: "{{ item.state | d('mounted') }}"
   loop: "{{ linux_mount }}"
+  tags: ["role::mount", "stage::configure"]

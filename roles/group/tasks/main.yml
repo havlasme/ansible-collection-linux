@@ -6,4 +6,4 @@
     system: "{{ item.system | d(omit) }}"
     state: "{{ item.state | d('present') }}"
   loop: "{{ linux_group }}"
-  tags: ["group", "configure"]
+  tags: ["role::group", "stage::configure"]
