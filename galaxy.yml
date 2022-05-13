@@ -11,3 +11,12 @@ repository: https://gitlab.com/havlas.me/ansible-collection-linux
 documentation: https://gitlab.com/havlas.me/ansible-collection-linux
 homepage: https://gitlab.com/havlas.me/ansible-collection-linux
 issues: https://gitlab.com/havlas.me/ansible-collection-linux/-/issues
+build_ignore:
+- .ansible-lint
+- .cache
+- .gitignore
+- .gitlab-ci.yml
+- .idea
+- .yamllint
+- dist
+- Makefile

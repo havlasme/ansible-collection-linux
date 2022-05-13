@@ -1,5 +1,5 @@
 ---
 - import_tasks: "install.yml"
-  tags: ["role::cron", "stage::install"]
+  tags: ["role::cron", "task::install"]
 - import_tasks: "configure.yml"
-  tags: ["role::cron", "stage::configure"]
+  tags: ["role::cron", "task::configure"]
