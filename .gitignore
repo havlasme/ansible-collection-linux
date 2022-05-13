@@ -1,9 +1,9 @@
-# production build
-/dist
-
 # intellij idea
 .idea
 
 # ansible
 .cache
-/production
+__pycache__
+
+# distribution
+/dist
