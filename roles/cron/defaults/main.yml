@@ -10,4 +10,4 @@ linux_cron: []
 #   month: string | d(omit)
 #   weekday: string | d(omit)
 #   cron_file: string | d(omit)
-#   state: enum('absent', 'present') | d('present')
+#   state: enum('present', 'absent') | d('present')

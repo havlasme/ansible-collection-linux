@@ -20,7 +20,7 @@ linux_sysctl: []
 #   value: string | d(omit)
 #   reload: boolean | d('yes')
 #   sysctl_file: string | d(omit)
-#   state: enum('absent', 'present') | d('present')
+#   state: enum('present', 'absent') | d('present')
 ```
 
 Dependencies

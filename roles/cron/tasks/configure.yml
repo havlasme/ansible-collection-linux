@@ -1,5 +1,5 @@
 ---
-- name: "(linux.cron) create, update, and remove cron job"
+- name: "(linux.cron) create, update, and remove cronjob"
   ansible.builtin.cron:
     name: "{{ item.name | mandatory }}"
     job: "{{ item.job | mandatory }}"

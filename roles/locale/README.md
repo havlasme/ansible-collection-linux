@@ -17,7 +17,7 @@ Role Variables
 # the system locale list
 linux_locale: []
 # - name: string
-#   state: enum('absent', 'present') | d('present')
+#   state: enum('present', 'absent') | d('present')
 ```
 
 Dependencies

@@ -6,4 +6,4 @@ linux_mount: []
 #   boot: boolean | d(omit)
 #   fstype: string | d(omit)
 #   opts: string | d(omit)
-#   state: enum('absent', 'mounted', 'present', 'umnounted', 'remounted') | d('mounted')
+#   state: enum('present', 'absent', 'mounted', 'umnounted', 'remounted') | d('mounted')

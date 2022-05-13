@@ -17,9 +17,9 @@ Role Variables
 # the group list
 linux_group: []
 # - name: string
-#   gid: integer | d(omit)
+#   gid: int | d(omit)
 #   system: boolean | d(omit)
-#   state: enum('absent', 'present') | d('present')
+#   state: enum('present', 'absent') | d('present')
 ```
 
 Dependencies

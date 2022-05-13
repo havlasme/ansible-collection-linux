@@ -24,14 +24,14 @@ linux_user: []
 #   password_lock: boolean | d(omit)
 #   shell: string | d(omit)
 #   system: boolean | d(omit)
-#   uid: integer | d(omit)
-#   state: enum('absent', 'present') | d('present')
+#   uid: int | d(omit)
+#   state: enum('present', 'absent') | d('present')
 #   authorized_key: [ ]
 #   - key: string
 #     key_options: string | d(omit)
 #     comment: string | d(omit)
 #     exclusive: boolean | d(omit)
-#     state: enum('absent', 'present') | d('present')
+#     state: enum('present', 'absent') | d('present')
 ```
 
 Dependencies
