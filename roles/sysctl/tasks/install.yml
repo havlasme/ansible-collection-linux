@@ -1,8 +1,5 @@
 ---
-- name: "(linux.sysctl) include os specific variables"
-  ansible.builtin.include_vars: "{{ ansible_os_family | lower }}.yml"
-
-- name: "(linux.sysctl) install required package"
+- name: "(linux.sysctl) install sysctl package"
   ansible.builtin.package:
     name: "{{ sysctl_package }}"
     state: "present"
