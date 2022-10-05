@@ -26,6 +26,7 @@ test:
 	$(MAKE) -C roles/group test
 	$(MAKE) -C roles/hostname test
 	$(MAKE) -C roles/locale test
+	$(MAKE) -C roles/motd test
 	$(MAKE) -C roles/mount test
 	$(MAKE) -C roles/sysctl test
 	$(MAKE) -C roles/timezone test

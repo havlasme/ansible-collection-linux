@@ -9,6 +9,7 @@ An [Ansible](https://www.ansible.com/) collection of linux-related roles, plugin
 - [havlasme.linux.group](/roles/group/README.md)
 - [havlasme.linux.hostname](/roles/hostname/README.md)
 - [havlasme.linux.locale](/roles/locale/README.md)
+- [havlasme.linux.motd](/roles/motd/README.md)
 - [havlasme.linux.mount](/roles/mount/README.md)
 - [havlasme.linux.sysctl](/roles/sysctl/README.md)
 - [havlasme.linux.timezone](/roles/timezone/README.md)

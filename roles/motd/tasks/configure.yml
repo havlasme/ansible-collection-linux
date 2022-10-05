@@ -1,0 +1,9 @@
+---
+- name: "(linux.motd) deploy main motd"
+  ansible.builtin.template:
+    name: "{{ linux_motd | mandatory }}"
+    src: "{{ linux_motd_tmpl | mandatory }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "linux_motd_tmpl is defined"
