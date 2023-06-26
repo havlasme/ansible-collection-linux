@@ -1,0 +1,10 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the t_group_001 is absent"
+    ansible.builtin.group:
+      name: "t_group_001"
+      state: "absent"

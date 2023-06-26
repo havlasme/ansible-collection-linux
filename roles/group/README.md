@@ -3,7 +3,7 @@ havlasme.linux.group
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to manage system groups.
+An [Ansible](https://www.ansible.com/) role to create, update, and delete local groups on [Debian](https://www.debian.org/).
 
 Requirements
 ------------
@@ -14,7 +14,7 @@ Role Variables
 --------------
 
 ```yaml
-# the group list
+# the local group list
 linux_group: []
 # - name: string
 #   gid: int | d(omit)

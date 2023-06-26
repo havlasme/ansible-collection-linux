@@ -6,4 +6,4 @@
   tasks:
   - name: "assert that the hostname is set"
     ansible.builtin.hostname:
-      name: "test_case_001"
+      name: "t_hostname_001"

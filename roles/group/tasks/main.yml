@@ -1,5 +1,5 @@
 ---
-- name: "(linux.group) create, update, and remove system group"
+- name: "(linux.group) create, update, and delete local group"
   ansible.builtin.group:
     name: "{{ item.name | mandatory }}"
     gid: "{{ item.gid | d(omit) }}"

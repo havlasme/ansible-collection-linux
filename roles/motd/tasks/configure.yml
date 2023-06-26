@@ -1,7 +1,7 @@
 ---
-- name: "(linux.motd) deploy main motd"
+- name: "(linux.motd) deploy the main motd"
   ansible.builtin.template:
-    name: "{{ linux_motd | mandatory }}"
+    dest: "{{ linux_motd | mandatory }}"
     src: "{{ linux_motd_tmpl | mandatory }}"
     owner: "root"
     group: "root"

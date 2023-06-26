@@ -1,5 +1,5 @@
 ---
-- name: "(linux.mount) create, update, and remove mount point"
+- name: "(linux.mount) create, update, and delete mount point"
   ansible.posix.mount:
     name: "{{ item.name | mandatory }}"
     src: "{{ item.src | d(omit) }}"

@@ -1,5 +1,5 @@
 ---
-# the group list
+# the local group list
 linux_group: []
 # - name: string
 #   gid: int | d(omit)

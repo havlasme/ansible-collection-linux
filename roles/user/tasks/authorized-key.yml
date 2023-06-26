@@ -1,5 +1,5 @@
 ---
-- name: "(linux.user) create, update, and remove authorized key"
+- name: "(linux.user) create, update, and delete authorized key"
   ansible.posix.authorized_key:
     key: "{{ item.1.key | mandatory }}"
     key_options: "{{ item.1.key_options | d(omit) }}"

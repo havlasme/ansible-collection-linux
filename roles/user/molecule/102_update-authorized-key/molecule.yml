@@ -18,6 +18,3 @@ provisioner:
     ansible-lint
 verifier:
   name: ansible
-  lint: |
-    set -e
-    ansible-lint

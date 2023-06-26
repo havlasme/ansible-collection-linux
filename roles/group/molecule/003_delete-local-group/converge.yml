@@ -1,0 +1,10 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "group"
+    vars:
+      linux_group:
+      - { name: "t_group_001", state: "absent" }

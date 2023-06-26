@@ -4,9 +4,9 @@
   gather_facts: false
 
   tasks:
-  - name: "assert that the test_mount_001 is mounted"
+  - name: "assert that the t_mount_001 is mounted"
     ansible.posix.mount:
-      name: "/opt/test_mount_001"
+      name: "/mnt/t_mount_001"
       src: "tmpfs"
       fstype: "tmpfs"
       opts: "ro"

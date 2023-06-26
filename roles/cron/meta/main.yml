@@ -1,4 +1,6 @@
 ---
+dependencies: [ ]
+
 galaxy_info:
   description: linux cron management
   author: havlas.me
@@ -14,5 +16,3 @@ galaxy_info:
   - cron
   - linux
   - system
-
-dependencies: []

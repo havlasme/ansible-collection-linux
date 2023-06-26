@@ -1,0 +1,17 @@
+---
+- name: "verify"
+  hosts: "all"
+  gather_facts: false
+
+  tasks:
+  - name: "assert that the vm.swappiness is absent"
+    ansible.posix.sysctl:
+      name: "vm.swappiness"
+      value: "10"
+      state: "absent"
+  - name: "assert that the kernel.panic is absent"
+    ansible.posix.sysctl:
+      name: "kernel.panic"
+      value: "3"
+      sysctl_file: "/etc/sysctl.d/t_sysctl_002"
+      state: "absent"

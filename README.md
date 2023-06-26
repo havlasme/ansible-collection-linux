@@ -18,8 +18,25 @@ An [Ansible](https://www.ansible.com/) collection of linux-related roles, plugin
 Installation
 ------------
 
-```bash
+```shell
 ansible-galaxy collection install havlasme.linux
+```
+
+```shell title="requirements.yml"
+---
+collections:
+- name: havlasme.linux
+```
+
+Development
+-----------
+
+```shell
+make build
+```
+
+```shell title="molecule"
+make test
 ```
 
 License

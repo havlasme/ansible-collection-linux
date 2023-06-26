@@ -3,7 +3,7 @@ havlasme.linux.hostname
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to manage system hostname.
+An [Ansible](https://www.ansible.com/) role to set the system hostname on [Debian](https://www.debian.org/).
 
 Requirements
 ------------

@@ -7,17 +7,17 @@
       name: "user"
     vars:
       linux_user:
-      - name: "test_case_001"
+      - name: "t_key_001"
         authorized_key:
         - key: >-
             ecdsa-sha2-nistp256
             AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOPhW/l7k3cwk4jqXw+cKoGhAHzqezpT/wryGy45Ei4VgfKi6LJm+djtIlTcS3RET00lWo6Rm/DCAjN+NHXk7e0=
-            test_case_00101
-          comment: "testcase_00101"
+            t_key_00101
+          comment: "t_key_00101"
         - key: >-
             ecdsa-sha2-nistp256
             AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJEhDtXPEsmJ6HeS23o9qQMgvnzY8+DLG2kmWDHfdnObsYGbhe+imNfcbaJ+wZxLFkfTCorl1ce+/o9zFGyuVM=
-            test_case_00102
-          comment: "testcase_00102"
+            t_key_00102
+          comment: "t_key_00102"
           key_options: "restrict"
           state: "present"

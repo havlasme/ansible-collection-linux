@@ -1,0 +1,9 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "motd"
+    vars:
+      linux_motd_tmpl: "t_motd.j2"

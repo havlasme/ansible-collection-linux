@@ -3,7 +3,7 @@ havlasme.linux.cron
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to manage cron jobs.
+An [Ansible](https://www.ansible.com/) role to install, and configure cron jobs on [Debian](https://www.debian.org/).
 
 Requirements
 ------------
@@ -14,7 +14,7 @@ Role Variables
 --------------
 
 ```yaml
-# the cron list
+# the cronjob list
 linux_cron: []
 # - name: string
 #   job: string
@@ -43,8 +43,8 @@ Example Playbook
       name: havlasme.linux.cron
     vars:
       linux_cron:
-      - name: "some job"
-        job: "/usr/local/bin/some-job.sh"
+      - name: "my awesome job"
+        job: "/usr/local/bin/my-awesome-job.sh"
 ```
 
 License

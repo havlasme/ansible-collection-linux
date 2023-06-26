@@ -3,7 +3,7 @@ havlasme.linux.timezone
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to manage system timezone.
+An [Ansible](https://www.ansible.com/) role to set the system timezone on [Debian](https://www.debian.org/).
 
 Requirements
 ------------

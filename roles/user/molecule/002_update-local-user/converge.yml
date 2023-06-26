@@ -1,0 +1,11 @@
+---
+- name: "converge"
+  hosts: "all"
+
+  tasks:
+  - import_role:
+      name: "user"
+    vars:
+      linux_user:
+      - { name: "t_user_001", uid: 1015 }
+      - { name: "t_user_002", comment: "tu_user_002", home: "/opt/tu_user_002", shell: "/bin/sh", uid: 1016 }

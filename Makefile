@@ -1,6 +1,6 @@
 NAMESPACE = $(shell yq -r .namespace galaxy.yml)
-ROLENAME = $(shell yq -r .name galaxy.yml)
-ROLEVERSION = $(shell yq -r .version galaxy.yml)
+COLLECTION = $(shell yq -r .name galaxy.yml)
+VERSION = $(shell yq -r .version galaxy.yml)
 DIST = ./dist
 GALAXY = @ansible-galaxy
 
@@ -17,7 +17,7 @@ install:
 ifeq (, $(shell which yq))
 	$(error "no yq. try doing pip3 install yq")
 else
-	$(GALAXY) collection install "$(DIST)/$(NAMESPACE)-$(ROLENAME)-$(ROLEVERSION).tar.gz"
+	$(GALAXY) collection install "$(DIST)/$(NAMESPACE)-$(COLLECTION)-$(VERSION).tar.gz"
 endif
 
 .PHONY: test

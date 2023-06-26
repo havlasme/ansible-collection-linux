@@ -21,5 +21,5 @@
       name: "net.ipv4.ip_forward"
       value: "1"
       reload: "no"
-      sysctl_file: "/etc/sysctl.d/test_job_003"
+      sysctl_file: "/etc/sysctl.d/t_sysctl_003"
       state: "present"

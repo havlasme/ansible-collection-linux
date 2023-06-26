@@ -1,5 +1,5 @@
 ---
-# the cron list
+# the cronjob list
 linux_cron: []
 # - name: string
 #   job: string
