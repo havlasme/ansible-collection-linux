@@ -14,7 +14,7 @@ Role Variables
 --------------
 
 ```yaml
-# the sysctl configuration
+# the sysctl list
 linux_sysctl: []
 # - name: string
 #   value: string | d(omit)
