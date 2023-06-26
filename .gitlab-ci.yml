@@ -15,7 +15,7 @@ molecule test:
   - echo -e '[engine]\ncgroup_manager = "cgroupfs"' > /etc/containers/containers.conf
   - podman info
   - python3 --version
-  - python3 -m pip install ansible ansible-lint molecule molecule[podman] yamllint
+  - python3 -m pip install ansible ansible-lint molecule molecule-plugins[podman] yamllint
   - ansible --version
   - molecule --version
   script:
