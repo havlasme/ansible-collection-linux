@@ -3,7 +3,7 @@ havlasme.linux.motd
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to set the system motd on [Debian](https://www.debian.org/).
+An [Ansible](https://www.ansible.com/) role to set the motd on [Debian](https://www.debian.org/).
 
 Requirements
 ------------
@@ -14,9 +14,9 @@ Role Variables
 --------------
 
 ```yaml
-# the local motd configuration
+# the motd
 linux_motd: "/etc/motd"
-# the local motd configuration template
+# the motd template
 #linux_motd_tmpl: ""
 ```
 

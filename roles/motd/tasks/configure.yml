@@ -1,5 +1,5 @@
 ---
-- name: "(linux.motd) set the local motd"
+- name: "(linux.motd) set the motd"
   ansible.builtin.template:
     dest: "{{ linux_motd | mandatory }}"
     src: "{{ linux_motd_tmpl | mandatory }}"

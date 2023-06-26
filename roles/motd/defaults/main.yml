@@ -1,5 +1,5 @@
 ---
-# the local motd configuration
+# the motd
 linux_motd: "/etc/motd"
-# the local motd configuration template
+# the motd template
 #linux_motd_tmpl: ""
