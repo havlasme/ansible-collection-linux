@@ -11,7 +11,7 @@ molecule test:
   before_script:
   - apt update
   - apt install -y fuse-overlayfs podman
-  - echo -e '[storage]\ndriver = "overlay"\nrunroot = "/var/obj/podman/storage"\n[storage.options.overlay]\nmount_program = "/usr/bin/fuse-overlayfs"\nmountopt = "nodev,metacopy=on"' > /etc/containers/storage.conf
+  - echo -e '[storage]\ndriver = "overlay"\nrunroot = "/var/obj/podman/storage"\ngraphroot = "/var/obj/podman/storage"\n[storage.options.overlay]\nmount_program = "/usr/bin/fuse-overlayfs"\nmountopt = "nodev,metacopy=on"' > /etc/containers/storage.conf
   - echo -e '[engine]\ncgroup_manager = "cgroupfs"' > /etc/containers/containers.conf
   - podman info
   - python3 --version
