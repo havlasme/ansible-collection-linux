@@ -1,6 +1,7 @@
 ---
-- name: "(linux.cron) install cron package"
-  ansible.builtin.package:
-    name: "{{ cron_package }}"
+- name: "linux | cron | install via apt"
+  ansible.builtin.apt:
+    name: "{{ cron_package_name }}"
     state: "present"
-  when: "linux_cron | length > 0"
+  when:
+  - "linux_cron | length > 0"

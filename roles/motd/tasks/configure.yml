@@ -1,9 +1,10 @@
 ---
-- name: "(linux.motd) set the motd"
+- name: "linux | motd | set the motd"
   ansible.builtin.template:
-    dest: "{{ linux_motd | mandatory }}"
-    src: "{{ linux_motd_tmpl | mandatory }}"
+    dest: "{{ linux_motd }}"
+    src: "{{ linux_motd_template }}"
     owner: "root"
     group: "root"
     mode: "0644"
-  when: "linux_motd_tmpl is defined"
+  when:
+  - "linux_motd_template is defined"

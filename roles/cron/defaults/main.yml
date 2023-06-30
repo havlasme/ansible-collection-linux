@@ -4,9 +4,9 @@ linux_cron: []
 # - name: string
 #   job: string
 #   user: string | d('root')
-#   day: string | d(omit)
-#   hour: string | d(omit)
 #   minute: string | d(omit)
+#   hour: string | d(omit)
+#   day: string | d(omit)
 #   month: string | d(omit)
 #   weekday: string | d(omit)
 #   cron_file: string | d(omit)

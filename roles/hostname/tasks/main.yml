@@ -1,6 +1,3 @@
 ---
-- name: "(linux.hostname) set system hostname"
-  ansible.builtin.hostname:
-    name: "{{ linux_hostname | mandatory }}"
-  when: "linux_hostname is defined"
+- import_tasks: "configure.yml"
   tags: ["role::hostname", "task::configure"]

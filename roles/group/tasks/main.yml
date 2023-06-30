@@ -1,9 +1,3 @@
 ---
-- name: "(linux.group) create, update, and delete local group"
-  ansible.builtin.group:
-    name: "{{ item.name | mandatory }}"
-    gid: "{{ item.gid | d(omit) }}"
-    system: "{{ item.system | d(omit) }}"
-    state: "{{ item.state | d('present') }}"
-  loop: "{{ linux_group }}"
+- import_tasks: "configure.yml"
   tags: ["role::group", "task::configure"]

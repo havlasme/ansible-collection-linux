@@ -1,5 +1,5 @@
 ---
-- name: "(linux.cron) include os specific variables"
+- name: "linux | cron | include distribution-specific variables"
   ansible.builtin.include_vars: "{{ ansible_os_family | lower }}.yml"
   tags: ["always"]
 

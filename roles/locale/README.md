@@ -3,7 +3,7 @@ havlasme.linux.locale
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to install, and configure system locales on [Debian](https://www.debian.org/).
+An [Ansible](https://www.ansible.com/) role to manage locales on [Debian](https://www.debian.org/).
 
 Requirements
 ------------
@@ -14,7 +14,7 @@ Role Variables
 --------------
 
 ```yaml
-# the system locale list
+# the locale list
 linux_locale: []
 # - name: string
 #   state: enum('present', 'absent') | d('present')

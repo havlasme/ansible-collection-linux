@@ -14,10 +14,10 @@ Role Variables
 --------------
 
 ```yaml
-# the motd
+# the motd conf
 linux_motd: "/etc/motd"
-# the motd template
-#linux_motd_tmpl: ""
+# the motd conf template
+#linux_motd_template: ""
 ```
 
 Dependencies
@@ -34,7 +34,7 @@ Example Playbook
   - import_role:
       name: havlasme.linux.motd
     vars:
-      linux_motd_tmpl: "motd.j2"
+      linux_motd_template: "motd.j2"
 ```
 
 License

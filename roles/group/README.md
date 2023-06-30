@@ -3,7 +3,7 @@ havlasme.linux.group
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to create, update, and delete local groups on [Debian](https://www.debian.org/).
+An [Ansible](https://www.ansible.com/) role to manage local groups on [Debian](https://www.debian.org/).
 
 Requirements
 ------------
@@ -37,7 +37,7 @@ Example Playbook
       name: havlasme.linux.group
     vars:
       linux_group:
-      - name: "root"
+      - name: "my-awesome-group"
 ```
 
 License

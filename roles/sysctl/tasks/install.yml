@@ -1,6 +1,7 @@
 ---
-- name: "(linux.sysctl) install sysctl package"
-  ansible.builtin.package:
-    name: "{{ sysctl_package }}"
+- name: "linux | sysctl | install via apt"
+  ansible.builtin.apt:
+    name: "{{ sysctl_package_name }}"
     state: "present"
-  when: "linux_sysctl | length > 0"
+  when:
+  - "linux_sysctl | length > 0"

@@ -1,5 +1,5 @@
 ---
-- name: "(linux.locale) include os specific variables"
+- name: "linux | locale | include distribution-specific variables"
   ansible.builtin.include_vars: "{{ ansible_os_family | lower }}.yml"
   tags: ["always"]
 

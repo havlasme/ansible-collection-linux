@@ -3,7 +3,7 @@ havlasme.linux.user
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to create, update, and delete local users on [Debian](https://www.debian.org/).
+An [Ansible](https://www.ansible.com/) role to manage local users on [Debian](https://www.debian.org/).
 
 Requirements
 ------------

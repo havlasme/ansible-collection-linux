@@ -3,7 +3,7 @@ havlasme.linux.hostname
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to set the system hostname on [Debian](https://www.debian.org/).
+An [Ansible](https://www.ansible.com/) role to set the hostname on [Debian](https://www.debian.org/).
 
 Requirements
 ------------
@@ -14,7 +14,7 @@ Role Variables
 --------------
 
 ```yaml
-# the system hostname
+# the hostname
 #linux_hostname: "hostname"
 ```
 
@@ -32,7 +32,7 @@ Example Playbook
   - import_role:
       name: havlasme.linux.hostname
     vars:
-      linux_hostname: "ansible-host"
+      linux_hostname: "my-awesome-host"
 ```
 
 License

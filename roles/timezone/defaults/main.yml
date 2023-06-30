@@ -1,5 +1,5 @@
 ---
-# the system timezone
+# the timezone
 #linux_timezone: "Etc/UTC"
 # set to UTC, to keep hardware clock in UTC timezone
 # set to local, to keep hardware clock in local timezone

@@ -1,11 +1,3 @@
 ---
-- name: "(linux.mount) create, update, and delete mount point"
-  ansible.posix.mount:
-    name: "{{ item.name | mandatory }}"
-    src: "{{ item.src | d(omit) }}"
-    boot: "{{ item.boot | d(omit) }}"
-    fstype: "{{ item.fstype | d(omit) }}"
-    opts: "{{ item.opts | d(omit) }}"
-    state: "{{ item.state | d('mounted') }}"
-  loop: "{{ linux_mount }}"
+- import_tasks: "configure.yml"
   tags: ["role::mount", "task::configure"]

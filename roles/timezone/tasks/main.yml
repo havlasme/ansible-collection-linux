@@ -1,7 +1,3 @@
 ---
-- name: "(linux.timezone) set system timezone"
-  community.general.timezone:
-    name: "{{ linux_timezone | mandatory }}"
-    hwclock: "{{ linux_timezone_hwclock | d(omit) }}"
-  when: "linux_timezone is defined"
+- import_tasks: "configure.yml"
   tags: ["role::timezone", "task::configure"]

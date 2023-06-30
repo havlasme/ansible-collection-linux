@@ -3,7 +3,7 @@ havlasme.linux.timezone
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to set the system timezone on [Debian](https://www.debian.org/).
+An [Ansible](https://www.ansible.com/) role to set the timezone on [Debian](https://www.debian.org/).
 
 Requirements
 ------------
@@ -14,8 +14,8 @@ Role Variables
 --------------
 
 ```yaml
-# the system timezone
-#linux_timezone: "UTC"
+# the timezone
+#linux_timezone: "Etc/UTC"
 # set to UTC, to keep hardware clock in UTC timezone
 # set to local, to keep hardware clock in local timezone
 #linux_timezone_hwclock: "UTC"

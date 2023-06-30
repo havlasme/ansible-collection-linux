@@ -1,6 +1,7 @@
 ---
-- name: "(linux.locale) install locale package"
-  ansible.builtin.package:
-    name: "{{ locale_package }}"
+- name: "linux | locale | install via apt"
+  ansible.builtin.apt:
+    name: "{{ locale_package_name }}"
     state: "present"
-  when: "linux_locale | length > 0"
+  when:
+  - "linux_locale | length > 0"

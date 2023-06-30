@@ -1,8 +1,8 @@
 ---
-dependencies: [ ]
+dependencies: []
 
 galaxy_info:
-  description: linux timezone management
+  description: An Ansible role to set the timezone on Debian.
   author: havlas.me
   company: havlas.me
   issue_tracker_url: https://gitlab.com/havlas.me/ansible-collection-linux/-/issues
@@ -15,4 +15,3 @@ galaxy_info:
   galaxy_tags:
   - linux
   - timezone
-  - system

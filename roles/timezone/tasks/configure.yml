@@ -1,0 +1,7 @@
+---
+- name: "linux |timezone | set the timezone"
+  community.general.timezone:
+    name: "{{ linux_timezone }}"
+    hwclock: "{{ linux_timezone_hwclock | d(omit) }}"
+  when:
+  - "linux_timezone is defined"

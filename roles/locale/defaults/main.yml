@@ -1,5 +1,5 @@
 ---
-# the system locale list
+# the locale list
 linux_locale: []
 # - name: string
 #   state: enum('present', 'absent') | d('present')

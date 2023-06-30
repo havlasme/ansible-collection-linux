@@ -6,4 +6,4 @@
   - import_role:
       name: "motd"
     vars:
-      linux_motd_tmpl: "t_motd.j2"
+      linux_motd_template: "t_motd.j2"

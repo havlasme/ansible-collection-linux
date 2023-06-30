@@ -1,0 +1,14 @@
+---
+- name: "linux | user | create, update, or delete a local user"
+  ansible.builtin.user:
+    name: "{{ item.name | mandatory }}"
+    comment: "{{ item.comment | d(omit) }}"
+    group: "{{ item.group | d(omit) }}"
+    home: "{{ item.home | d(omit) }}"
+    password: "{{ item.password | d(omit) }}"
+    password_lock: "{{ item.password_lock | d(omit) }}"
+    shell: "{{ item.shell | d(omit) }}"
+    system: "{{ item.system | d(omit) }}"
+    uid: "{{ item.uid | d(omit) }}"
+    state: "{{ item.state | d('present') }}"
+  loop: "{{ linux_user }}"

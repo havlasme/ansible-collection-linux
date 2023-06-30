@@ -1,3 +1,3 @@
 ---
 # the locale package name
-locale_package: "locales"
+locale_package_name: "locales"

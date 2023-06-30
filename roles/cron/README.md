@@ -3,7 +3,7 @@ havlasme.linux.cron
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to install, and configure cron jobs on [Debian](https://www.debian.org/).
+An [Ansible](https://www.ansible.com/) role to install cron daemon, and manage cronjobs on [Debian](https://www.debian.org/).
 
 Requirements
 ------------
@@ -19,13 +19,14 @@ linux_cron: []
 # - name: string
 #   job: string
 #   user: string | d('root')
-#   day: string | d(omit)
-#   hour: string | d(omit)
 #   minute: string | d(omit)
+#   hour: string | d(omit)
+#   day: string | d(omit)
 #   month: string | d(omit)
 #   weekday: string | d(omit)
 #   cron_file: string | d(omit)
 #   state: enum('present', 'absent') | d('present')
+
 ```
 
 Dependencies
