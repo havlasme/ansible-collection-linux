@@ -2,9 +2,12 @@
 # the local user list
 linux_user: []
 # - name: string
+#   append: boolean | d(omit)
 #   comment: string | d(omit)
 #   group: string | d(omit)
+#   groups: string[] | d(omit)
 #   home: string | d(omit)
+#   local: boolean | d(omit)
 #   password: string | d(omit)
 #   password_lock: boolean | d(omit)
 #   shell: string | d(omit)
