@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the motd is set'
+  - name: 'assert that motd is set to correct value'
     ansible.builtin.copy:
       dest: '/etc/motd'
       content: 'Test MOTD.'

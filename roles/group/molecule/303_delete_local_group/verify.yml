@@ -4,8 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the t_group_001 is present'
+  - name: 'assert that `t_group_001` group is absent'
     ansible.builtin.group:
       name: 't_group_001'
-      gid: 1015
-      state: 'present'
+      state: 'absent'

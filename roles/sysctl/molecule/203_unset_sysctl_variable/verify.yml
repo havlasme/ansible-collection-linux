@@ -4,12 +4,12 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the vm.swappiness is absent'
+  - name: 'assert that the `vm.swappiness` variable is unset'
     ansible.posix.sysctl:
       name: 'vm.swappiness'
       value: '10'
       state: 'absent'
-  - name: 'assert that the kernel.panic is absent'
+  - name: 'assert that the `kernel.panic` variable is unset'
     ansible.posix.sysctl:
       name: 'kernel.panic'
       value: '3'

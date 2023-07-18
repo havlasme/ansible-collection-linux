@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that t_key_00102 is present'
+  - name: 'assert that `t_key_00102` key is absent'
     ansible.posix.authorized_key:
       key: >-
         ecdsa-sha2-nistp256

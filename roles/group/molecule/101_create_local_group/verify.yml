@@ -4,15 +4,15 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the t_group_001 is present'
+  - name: 'assert that `t_group_001` group is present'
     ansible.builtin.group:
       name: 't_group_001'
       state: 'present'
-  - name: 'assert that the t_group_002 is present'
+  - name: 'assert that `t_group_002` group is present'
     ansible.builtin.group:
       name: 't_group_002'
       state: 'present'
-  - name: 'assert that the t_group_003 is present'
+  - name: 'assert that `t_group_003` group is present'
     ansible.builtin.group:
       name: 't_group_003'
       gid: 915

@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the vm.swappiness is present'
+  - name: 'assert that the `vm.swappiness` variable is set'
     ansible.posix.sysctl:
       name: 'vm.swappiness'
       value: '20'

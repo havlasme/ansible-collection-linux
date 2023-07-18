@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the locales package is present'
+  - name: 'assert that cron package is present'
     ansible.builtin.package:
-      name: 'locales'
+      name: 'cron'
       state: 'present'

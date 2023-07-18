@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that t_key_00102 is present'
+  - name: 'assert that `t_key_00102` key is present'
     ansible.posix.authorized_key:
       key: >-
         ecdsa-sha2-nistp256
@@ -13,7 +13,7 @@
       comment: 'tu_key_00101'
       user: 't_key_001'
       state: 'present'
-  - name: 'assert that t_key_00102 is present'
+  - name: 'assert that `t_key_00102` key is present'
     ansible.posix.authorized_key:
       key: >-
         ecdsa-sha2-nistp256

@@ -4,6 +4,6 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the hostname is set'
+  - name: 'assert that hostname is set to correct value'
     ansible.builtin.hostname:
       name: 't_hostname_001'

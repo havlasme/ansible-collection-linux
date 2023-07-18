@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the t_user_001 is absent'
+  - name: 'assert that `t_user_001` user is absent'
     ansible.builtin.user:
       name: 't_user_001'
       state: 'absent'

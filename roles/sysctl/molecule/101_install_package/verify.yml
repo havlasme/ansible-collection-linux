@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the procps package is present'
+  - name: 'assert that sysctl package is present'
     ansible.builtin.package:
       name: 'procps'
       state: 'present'

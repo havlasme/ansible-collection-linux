@@ -20,6 +20,18 @@ else
 	$(GALAXY) collection install "$(DIST)/$(NAMESPACE)-$(COLLECTION)-$(VERSION).tar.gz"
 endif
 
+.PHONY: lint
+lint:
+	$(MAKE) -C roles/cron lint
+	$(MAKE) -C roles/group lint
+	$(MAKE) -C roles/hostname lint
+	$(MAKE) -C roles/locale lint
+	$(MAKE) -C roles/motd lint
+	$(MAKE) -C roles/mount lint
+	$(MAKE) -C roles/sysctl lint
+	$(MAKE) -C roles/timezone lint
+	$(MAKE) -C roles/user lint
+
 .PHONY: test
 test:
 	$(MAKE) -C roles/cron test

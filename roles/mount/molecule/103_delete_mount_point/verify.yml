@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the t_mount_001 is absent'
+  - name: 'assert that `t_mount_001` mount point is absent'
     ansible.posix.mount:
       name: '/mnt/t_mount_001'
       src: 'tmpfs'

@@ -4,12 +4,12 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the t_cronjob_001 is present'
+  - name: 'assert that `t_cronjob_001` job is present'
     ansible.builtin.cron:
       name: 't_cronjob_001'
       job: '/usr/bin/false'
       state: 'present'
-  - name: 'assert that the t_cronjob_002 is present'
+  - name: 'assert that `t_cronjob_002` job is present'
     ansible.builtin.cron:
       name: 't_cronjob_002'
       job: '/usr/bin/false'

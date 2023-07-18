@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the sk_SK.UTF-8 is absent'
+  - name: 'assert that `sk_SK.UTF-8` locale is absent'
     community.general.locale_gen:
       name: 'sk_SK.UTF-8'
       state: 'absent'

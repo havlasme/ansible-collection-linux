@@ -4,6 +4,6 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the timezone is set'
+  - name: 'assert that timezone is set to correct value'
     community.general.timezone:
       name: 'Europe/Bratislava'

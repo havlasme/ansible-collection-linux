@@ -4,12 +4,12 @@
   gather_facts: false
 
   tasks:
-  - name: 'assert that the t_user_001 is present'
+  - name: 'assert that `t_user_001` user is present'
     ansible.builtin.user:
       name: 't_user_001'
       uid: 1015
       state: 'present'
-  - name: 'assert that the t_user_002 is present'
+  - name: 'assert that `t_user_002` user is present'
     ansible.builtin.user:
       name: 't_user_002'
       comment: 'tu_user_002_updated'

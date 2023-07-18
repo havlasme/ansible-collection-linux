@@ -15,6 +15,7 @@ An [Ansible](https://www.ansible.com/) collection of linux-related roles, plugin
 - [havlasme.linux.timezone](/roles/timezone/README.md)
 - [havlasme.linux.user](/roles/user/README.md)
 
+
 Installation
 ------------
 
@@ -28,6 +29,7 @@ collections:
 - name: havlasme.linux
 ```
 
+
 Development
 -----------
 
@@ -35,19 +37,26 @@ Development
 make build
 ```
 
+```shell title="ansible-lint"
+make lint
+```
+
 ```shell title="molecule"
 make test
 ```
+
 
 License
 -------
 
 Apache-2.0
 
+
 Author Information
 ------------------
 
 Created by [Tomáš Havlas](https://havlas.me/).
+
 
 [license-image]: https://img.shields.io/badge/license-Apache2.0-blue.svg?style=flat-square
 [license-link]: LICENSE
