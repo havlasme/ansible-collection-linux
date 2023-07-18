@@ -1,7 +1,7 @@
 ---
 # the local group list
+## - name: string
+##   gid: int | d(omit)
+##   system: boolean | d(omit)
+##   state: enum('present', 'absent') | d('present')
 linux_group: []
-# - name: string
-#   gid: int | d(omit)
-#   system: boolean | d(omit)
-#   state: enum('present', 'absent') | d('present')

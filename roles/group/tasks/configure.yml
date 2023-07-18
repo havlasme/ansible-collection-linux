@@ -1,8 +1,8 @@
 ---
-- name: "linux | group | create, update, or delete a local group"
+- name: 'linux | group | create, update, or delete a local group'
   ansible.builtin.group:
-    name: "{{ item.name | mandatory }}"
-    gid: "{{ item.gid | d(omit) }}"
-    system: "{{ item.system | d(omit) }}"
-    state: "{{ item.state | d('present') }}"
-  loop: "{{ linux_group }}"
+    name: '{{ item.name | mandatory }}'
+    gid: '{{ item.gid | d(omit) }}'
+    system: '{{ item.system | d(omit) }}'
+    state: '{{ item.state | d("present") }}'
+  loop: '{{ linux_group }}'

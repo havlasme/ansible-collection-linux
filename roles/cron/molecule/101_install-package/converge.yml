@@ -1,0 +1,7 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.import_role:
+      name: 'cron'

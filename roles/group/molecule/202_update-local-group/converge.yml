@@ -1,0 +1,10 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.import_role:
+      name: 'group'
+    vars:
+      linux_group:
+      - { name: 't_group_001', gid: 1015 }

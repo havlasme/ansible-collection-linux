@@ -1,0 +1,13 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.import_role:
+      name: 'cron'
+    vars:
+      linux_cron_job:
+      - { name: 't_cronjob_001', job: '/usr/bin/true' }
+      - { name: 't_cronjob_002', job: '/usr/bin/true', state: 'present' }
+      - { name: 't_cronjob_003', job: '/usr/bin/true', user: 'nobody', day: '1', hour: '22', minute: '30', month: '6', weekday: '3' }
+      - { name: 't_cronjob_004', job: '/usr/bin/true', cron_file: '/etc/cron.d/t_cronjob_004' }
