@@ -5,6 +5,7 @@ havlasme.linux.group
 
 An [Ansible](https://www.ansible.com/) role to manage local groups on [Debian](https://www.debian.org/) or [Ubuntu](https://ubuntu.com/).
 
+* create, update, or delete local group
 
 Role Variables
 --------------
