@@ -12,3 +12,5 @@
     cron_file: '{{ item.cron_file | d(omit) }}'
     state: '{{ item.state | d("present") }}'
   loop: '{{ linux_cron_job }}'
+  loop_control:
+    label: '{{ item.job }} | {{ item.state | d("present") }}'

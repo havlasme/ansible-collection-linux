@@ -15,3 +15,5 @@
     uid: '{{ item.uid | d(omit) }}'
     state: '{{ item.state | d("present") }}'
   loop: '{{ linux_user }}'
+  loop_control:
+    label: '{{ item.name }} | {{ item.state | d("present") }}'

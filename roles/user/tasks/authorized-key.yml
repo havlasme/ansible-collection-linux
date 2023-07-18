@@ -8,5 +8,7 @@
     user: '{{ item.0.name | mandatory }}'
     state: '{{ item.1.state | d("present") }}'
   loop: '{{ linux_user | subelements("authorized_key", skip_missing="yes") }}'
+  loop_control:
+    label: '{{ item.0.name }} | {{ item.1.key }} | {{ item.1.state | d("present") }}'
   when:
   - item.0.state | d('present') == 'present'

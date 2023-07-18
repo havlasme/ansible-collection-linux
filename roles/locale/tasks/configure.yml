@@ -4,3 +4,5 @@
     name: '{{ item.name | mandatory }}'
     state: '{{ item.state | d("present") }}'
   loop: '{{ linux_locale }}'
+  loop_control:
+    label: '{{ item.name }} | {{ item.state | d("present") }}'

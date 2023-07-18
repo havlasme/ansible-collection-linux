@@ -7,3 +7,5 @@
     sysctl_file: '{{ item.sysctl_file | d(omit) }}'
     state: '{{ item.state | d("present") }}'
   loop: '{{ linux_sysctl }}'
+  loop_control:
+    label: '{{ item.name }}: {{ item.value }} | {{ item.state | d("present") }}'
