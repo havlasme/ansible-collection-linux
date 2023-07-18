@@ -1,0 +1,26 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the t_mount_001 is mounted'
+    ansible.posix.mount:
+      name: '/mnt/t_mount_001'
+      src: 'tmpfs'
+      fstype: 'tmpfs'
+      state: 'mounted'
+  - name: 'assert that the t_mount_002 is mounted'
+    ansible.posix.mount:
+      name: '/mnt/t_mount_002'
+      src: 'tmpfs'
+      fstype: 'tmpfs'
+      state: 'mounted'
+  - name: 'assert that the t_mount_003 is mounted'
+    ansible.posix.mount:
+      name: '/mnt/t_mount_003'
+      src: 'tmpfs'
+      boot: true
+      fstype: 'tmpfs'
+      opts: 'ro'
+      state: 'mounted'

@@ -1,0 +1,9 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the timezone is set'
+    community.general.timezone:
+      name: 'Europe/Bratislava'

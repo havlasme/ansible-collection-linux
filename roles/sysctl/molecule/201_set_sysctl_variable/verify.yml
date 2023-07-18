@@ -1,0 +1,25 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the vm.swappiness is present'
+    ansible.posix.sysctl:
+      name: 'vm.swappiness'
+      value: '10'
+      reload: falsee
+      state: 'present'
+  - name: 'assert that the kernel.panic is present'
+    ansible.posix.sysctl:
+      name: 'kernel.panic'
+      value: '3'
+      reload: false
+      state: 'present'
+  - name: 'assert that the net.ipv4.ip_forward is present'
+    ansible.posix.sysctl:
+      name: 'net.ipv4.ip_forward'
+      value: '1'
+      reload: false
+      sysctl_file: '/etc/sysctl.d/t_sysctl_003'
+      state: 'present'

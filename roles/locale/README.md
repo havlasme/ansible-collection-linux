@@ -3,22 +3,22 @@ havlasme.linux.locale
 
 [![Apache-2.0 license][license-image]][license-link]
 
-An [Ansible](https://www.ansible.com/) role to manage locales on [Debian](https://www.debian.org/).
+An [Ansible](https://www.ansible.com/) role to manage locales on [Debian](https://www.debian.org/) or [Ubuntu](https://ubuntu.com/).
 
-Requirements
-------------
+* install or update locale package via apt
+* generate or delete locale
 
-None.
 
 Role Variables
 --------------
 
 ```yaml
 # the locale list
+## - name: string
+##   state: enum('present', 'absent') | d('present')
 linux_locale: []
-# - name: string
-#   state: enum('present', 'absent') | d('present')
 ```
+
 
 Dependencies
 ------------
@@ -29,28 +29,33 @@ Dependencies
 ansible-galaxy collection install community.general
 ```
 
+
 Example Playbook
 ----------------
 
 ```yaml
-- hosts: all
+- hosts: 'all'
+
   tasks:
-  - import_role:
-      name: havlasme.linux.locale
+  - ansible.builtin.include_role:
+      name: 'havlasme.linux.locale'
     vars:
       linux_locale:
-      - name: "en_US.UTF-8"
+      - name: 'en_US.UTF-8'
 ```
+
 
 License
 -------
 
 Apache-2.0
 
+
 Author Information
 ------------------
 
 Created by [Tomáš Havlas](https://havlas.me/).
+
 
 [license-image]: https://img.shields.io/badge/license-Apache2.0-blue.svg?style=flat-square
 [license-link]: ../../LICENSE

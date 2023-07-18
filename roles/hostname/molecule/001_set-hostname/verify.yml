@@ -1,9 +1,0 @@
----
-- name: "verify"
-  hosts: "all"
-  gather_facts: false
-
-  tasks:
-  - name: "assert that the hostname is set"
-    ansible.builtin.hostname:
-      name: "t_hostname_001"

@@ -1,0 +1,27 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.import_role:
+      name: 'user'
+    vars:
+      linux_user:
+      - name: 't_key_001'
+        authorized_key:
+        - key: >-
+            ecdsa-sha2-nistp256
+            AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDwP3Ydc0NGLJ76V/lXVvIHnQ/2+fJWeVMYvlFpZiNt4G3Oy4v7pmVaaG3NwJu3HEiwSBsmCxbx6wUVYtGyxwls=
+            t_key_00101
+        - key: >-
+            ecdsa-sha2-nistp256
+            AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOPhW/l7k3cwk4jqXw+cKoGhAHzqezpT/wryGy45Ei4VgfKi6LJm+djtIlTcS3RET00lWo6Rm/DCAjN+NHXk7e0=
+            t_key_00102
+          state: 'present'
+        - key: >-
+            ecdsa-sha2-nistp256
+            AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJEhDtXPEsmJ6HeS23o9qQMgvnzY8+DLG2kmWDHfdnObsYGbhe+imNfcbaJ+wZxLFkfTCorl1ce+/o9zFGyuVM=
+            t_key_00103
+          comment: 't_key_00103'
+          key_options: 'no-port-forwarding'
+          state: 'present'

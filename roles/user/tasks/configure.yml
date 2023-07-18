@@ -1,17 +1,17 @@
 ---
-- name: "linux | user | create, update, or delete a local user"
+- name: 'linux | user | create, update, or delete local user'
   ansible.builtin.user:
-    name: "{{ item.name | mandatory }}"
-    append: "{{ item.append | d(omit) }}"
-    comment: "{{ item.comment | d(omit) }}"
-    group: "{{ item.group | d(omit) }}"
-    groups: "{{ item.groups | d(omit) }}"
-    home: "{{ item.home | d(omit) }}"
-    local: "{{ item.local | d(omit) }}"
-    password: "{{ item.password | d(omit) }}"
-    password_lock: "{{ item.password_lock | d(omit) }}"
-    shell: "{{ item.shell | d(omit) }}"
-    system: "{{ item.system | d(omit) }}"
-    uid: "{{ item.uid | d(omit) }}"
-    state: "{{ item.state | d('present') }}"
-  loop: "{{ linux_user }}"
+    name: '{{ item.name | mandatory }}'
+    append: '{{ item.append | d(omit) }}'
+    comment: '{{ item.comment | d(omit) }}'
+    group: '{{ item.group | d(omit) }}'
+    groups: '{{ item.groups | d(omit) }}'
+    home: '{{ item.home | d(omit) }}'
+    local: '{{ item.local | d(omit) }}'
+    password: '{{ item.password | d(omit) }}'
+    password_lock: '{{ item.password_lock | d(omit) }}'
+    shell: '{{ item.shell | d(omit) }}'
+    system: '{{ item.system | d(omit) }}'
+    uid: '{{ item.uid | d(omit) }}'
+    state: '{{ item.state | d("present") }}'
+  loop: '{{ linux_user }}'

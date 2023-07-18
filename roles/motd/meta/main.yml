@@ -2,16 +2,16 @@
 dependencies: []
 
 galaxy_info:
-  description: An Ansible role to set the motd on Debian.
-  author: havlas.me
-  company: havlas.me
-  issue_tracker_url: https://gitlab.com/havlas.me/ansible-collection-linux/-/issues
-  license: Apache-2.0
-  min_ansible_version: 2.9
+  description: 'An Ansible role to set the motd on Debian or Ubuntu.'
+  author: 'havlas.me'
+  company: 'havlas.me'
+  issue_tracker_url: 'https://gitlab.com/havlas.me/ansible-collection-linux/-/issues'
+  license: 'Apache-2.0'
+  min_ansible_version: '2.9'
   platforms:
-  - name: Debian
+  - name: 'Debian'
     versions:
-    - all
+    - 'all'
   galaxy_tags:
-  - motd
-  - linux
+  - 'motd'
+  - 'linux'

@@ -1,12 +1,12 @@
 ---
-- name: "linux | user | create, update, or delete an authorized key"
+- name: 'linux | user | create, update, or delete users authorized key'
   ansible.posix.authorized_key:
-    key: "{{ item.1.key | mandatory }}"
-    key_options: "{{ item.1.key_options | d(omit) }}"
-    comment: "{{ item.1.comment | d(omit) }}"
-    exclusive: "{{ item.1.exclusive | d(omit) }}"
-    user: "{{ item.0.name | mandatory }}"
-    state: "{{ item.1.state | d('present') }}"
-  loop: "{{ linux_user | subelements('authorized_key', skip_missing='yes') }}"
+    key: '{{ item.1.key | mandatory }}'
+    key_options: '{{ item.1.key_options | d(omit) }}'
+    comment: '{{ item.1.comment | d(omit) }}'
+    exclusive: '{{ item.1.exclusive | d(omit) }}'
+    user: '{{ item.0.name | mandatory }}'
+    state: '{{ item.1.state | d("present") }}'
+  loop: '{{ linux_user | subelements("authorized_key", skip_missing="yes") }}'
   when:
-  - "item.0.state | d('present') == 'present'"
+  - item.0.state | d('present') == 'present'

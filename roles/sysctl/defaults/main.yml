@@ -1,8 +1,11 @@
 ---
+# the sysctl package state ('present', 'latest')
+linux_sysctl_state: 'present'
+
 # the sysctl list
+## - name: string
+##   value: string | d(omit)
+##   reload: boolean | d(true)
+##   sysctl_file: string | d(omit)
+##   state: enum('present', 'absent') | d('present')
 linux_sysctl: []
-# - name: string
-#   value: string | d(omit)
-#   reload: boolean | d('yes')
-#   sysctl_file: string | d(omit)
-#   state: enum('present', 'absent') | d('present')

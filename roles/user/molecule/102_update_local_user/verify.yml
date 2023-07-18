@@ -1,0 +1,19 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the t_user_001 is present'
+    ansible.builtin.user:
+      name: 't_user_001'
+      uid: 1015
+      state: 'present'
+  - name: 'assert that the t_user_002 is present'
+    ansible.builtin.user:
+      name: 't_user_002'
+      comment: 'tu_user_002_updated'
+      home: '/opt/tu_user_002_updated'
+      shell: '/bin/sh'
+      uid: 1016
+      state: 'present'

@@ -1,0 +1,12 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the vm.swappiness is present'
+    ansible.posix.sysctl:
+      name: 'vm.swappiness'
+      value: '20'
+      reload: false
+      state: 'present'

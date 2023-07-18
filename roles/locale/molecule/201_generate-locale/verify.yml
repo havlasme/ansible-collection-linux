@@ -1,0 +1,14 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the sk_SK.UTF-8 is present'
+    community.general.locale_gen:
+      name: 'sk_SK.UTF-8'
+      state: 'present'
+  - name: 'assert that the cs_CZ.UTF-8 is present'
+    community.general.locale_gen:
+      name: 'cs_CZ.UTF-8'
+      state: 'present'

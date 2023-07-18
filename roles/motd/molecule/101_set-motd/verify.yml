@@ -1,0 +1,10 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the motd is set'
+    ansible.builtin.copy:
+      dest: '/etc/motd'
+      content: 'Test MOTD.'

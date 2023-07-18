@@ -1,0 +1,25 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that t_key_00102 is present'
+    ansible.posix.authorized_key:
+      key: >-
+        ecdsa-sha2-nistp256
+        AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOPhW/l7k3cwk4jqXw+cKoGhAHzqezpT/wryGy45Ei4VgfKi6LJm+djtIlTcS3RET00lWo6Rm/DCAjN+NHXk7e0=
+        tu_key_00101
+      comment: 'tu_key_00101'
+      user: 't_key_001'
+      state: 'present'
+  - name: 'assert that t_key_00102 is present'
+    ansible.posix.authorized_key:
+      key: >-
+        ecdsa-sha2-nistp256
+        AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJEhDtXPEsmJ6HeS23o9qQMgvnzY8+DLG2kmWDHfdnObsYGbhe+imNfcbaJ+wZxLFkfTCorl1ce+/o9zFGyuVM=
+        tu_key_00102
+      comment: 'tu_key_00102'
+      key_options: 'no-port-forwarding'
+      user: 't_key_001'
+      state: 'present'

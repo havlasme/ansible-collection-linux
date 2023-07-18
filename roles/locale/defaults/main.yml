@@ -1,5 +1,8 @@
 ---
+# the locale state ('present', 'latest')
+linux_locale_state: 'present'
+
 # the locale list
+## - name: string
+##   state: enum('present', 'absent') | d('present')
 linux_locale: []
-# - name: string
-#   state: enum('present', 'absent') | d('present')

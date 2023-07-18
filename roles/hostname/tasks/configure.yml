@@ -1,6 +1,6 @@
 ---
-- name: "linux | hostname | set the hostname"
+- name: 'linux | hostname | set hostname'
   ansible.builtin.hostname:
-    name: "{{ linux_hostname }}"
+    name: '{{ linux_hostname }}'
   when:
-  - "linux_hostname is defined"
+  - linux_hostname is defined
