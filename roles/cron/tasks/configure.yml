@@ -1,14 +1,14 @@
 ---
-- name: "linux | cron | create, update, or delete a cronjob"
+- name: 'linux | cron | create, update, or delete cron job'
   ansible.builtin.cron:
-    name: "{{ item.name | mandatory }}"
-    job: "{{ item.job | mandatory }}"
-    user: "{{ item.user | d('root') }}"
-    day: "{{ item.day | d(omit) }}"
-    hour: "{{ item.hour | d(omit) }}"
-    minute: "{{ item.minute | d(omit) }}"
-    month: "{{ item.month | d(omit) }}"
-    weekday: "{{ item.weekday | d(omit) }}"
-    cron_file: "{{ item.cron_file | d(omit) }}"
-    state: "{{ item.state | d('present') }}"
-  loop: "{{ linux_cron }}"
+    name: '{{ item.name | mandatory }}'
+    job: '{{ item.job | mandatory }}'
+    user: '{{ item.user | d("root") }}'
+    day: '{{ item.day | d(omit) }}'
+    hour: '{{ item.hour | d(omit) }}'
+    minute: '{{ item.minute | d(omit) }}'
+    month: '{{ item.month | d(omit) }}'
+    weekday: '{{ item.weekday | d(omit) }}'
+    cron_file: '{{ item.cron_file | d(omit) }}'
+    state: '{{ item.state | d("present") }}'
+  loop: '{{ linux_cron_job }}'

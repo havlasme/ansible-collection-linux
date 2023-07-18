@@ -1,7 +1,5 @@
 ---
-- name: "linux | cron | install via apt"
+- name: 'linux | cron | install or update cron package via apt'
   ansible.builtin.apt:
-    name: "{{ cron_package_name }}"
-    state: "present"
-  when:
-  - "linux_cron | length > 0"
+    name: '{{ linux_cron_package_name }}'
+    state: '{{ linux_cron_state }}'

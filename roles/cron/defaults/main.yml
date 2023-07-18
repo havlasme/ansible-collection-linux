@@ -1,13 +1,16 @@
 ---
-# the cronjob list
-linux_cron: []
-# - name: string
-#   job: string
-#   user: string | d('root')
-#   minute: string | d(omit)
-#   hour: string | d(omit)
-#   day: string | d(omit)
-#   month: string | d(omit)
-#   weekday: string | d(omit)
-#   cron_file: string | d(omit)
-#   state: enum('present', 'absent') | d('present')
+# the cron package state ('present', 'latest')
+linux_cron_state: 'present'
+
+# the cron job list
+## - name: string
+##   job: string
+##   user: string | d('root')
+##   minute: string | d(omit)
+##   hour: string | d(omit)
+##   day: string | d(omit)
+##   month: string | d(omit)
+##   weekday: string | d(omit)
+##   cron_file: string | d(omit)
+##   state: enum('present', 'absent') | d('present')
+linux_cron_job: []

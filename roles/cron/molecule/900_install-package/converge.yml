@@ -6,5 +6,5 @@
   - import_role:
       name: "cron"
     vars:
-      linux_cron:
+      linux_cron_job:
       - { name: "t_cronjob_001", job: "/usr/bin/true" }
