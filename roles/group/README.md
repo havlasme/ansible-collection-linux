@@ -7,6 +7,7 @@ An [Ansible](https://www.ansible.com/) role to manage local groups on [Debian](h
 
 * create, update, or delete local group
 
+
 Role Variables
 --------------
 
