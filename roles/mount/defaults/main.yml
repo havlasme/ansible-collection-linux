@@ -7,3 +7,4 @@
 ##   opts: string | d(omit)
 ##   state: enum('present', 'absent', 'mounted', 'umnounted', 'remounted') | d('mounted')
 linux_mount: []
+...

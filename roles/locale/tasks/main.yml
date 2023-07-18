@@ -7,3 +7,4 @@
   tags: [ 'role::locale', 'task::install' ]
 - ansible.builtin.import_tasks: 'configure.yml'
   tags: [ 'role::locale', 'task::configure' ]
+...

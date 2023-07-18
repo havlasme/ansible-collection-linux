@@ -6,3 +6,4 @@ linux_locale_state: 'present'
 ## - name: string
 ##   state: enum('present', 'absent') | d('present')
 linux_locale: []
+...

@@ -14,3 +14,4 @@ linux_cron_state: 'present'
 ##   cron_file: string | d(omit)
 ##   state: enum('present', 'absent') | d('present')
 linux_cron_job: []
+...

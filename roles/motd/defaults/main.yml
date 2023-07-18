@@ -3,3 +3,4 @@
 linux_motd_file: '/etc/motd'
 # the motd conf template
 #linux_motd_template: 'etc/motd.j2'
+...

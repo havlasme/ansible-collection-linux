@@ -1,3 +1,4 @@
 ---
 # the locale package name
 linux_locale_package_name: 'locales'
+...

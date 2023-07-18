@@ -3,3 +3,4 @@
   ansible.builtin.apt:
     name: '{{ linux_locale_package_name }}'
     state: '{{ linux_locale_state }}'
+...

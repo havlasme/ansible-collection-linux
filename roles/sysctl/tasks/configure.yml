@@ -9,3 +9,4 @@
   loop: '{{ linux_sysctl }}'
   loop_control:
     label: '{{ item.name }}: {{ item.value }} | {{ item.state | d("present") }}'
+...

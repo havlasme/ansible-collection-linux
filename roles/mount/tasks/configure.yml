@@ -10,3 +10,4 @@
   loop: '{{ linux_mount }}'
   loop_control:
     label: '{{ item.name }} | {{ item.state | d("present") }}'
+...

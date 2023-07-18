@@ -20,3 +20,4 @@
 ##     exclusive: boolean | d(omit)
 ##     state: enum('present', 'absent') | d('present')
 linux_user: []
+...

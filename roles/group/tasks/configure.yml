@@ -8,3 +8,4 @@
   loop: '{{ linux_group }}'
   loop_control:
     label: '{{ item.name }} | {{ item.state | d("present") }}'
+...

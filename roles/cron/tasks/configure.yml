@@ -14,3 +14,4 @@
   loop: '{{ linux_cron_job }}'
   loop_control:
     label: '{{ item.job }} | {{ item.state | d("present") }}'
+...

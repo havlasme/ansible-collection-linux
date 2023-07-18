@@ -6,3 +6,4 @@
   loop: '{{ linux_locale }}'
   loop_control:
     label: '{{ item.name }} | {{ item.state | d("present") }}'
+...
