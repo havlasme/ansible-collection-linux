@@ -1,5 +1,5 @@
 ---
-- name: 'linux |timezone | set timezone'
+- name: 'linux | timezone | configure | set timezone'
   community.general.timezone:
     name: '{{ linux_timezone }}'
     hwclock: '{{ linux_timezone_hwclock | d(omit) }}'

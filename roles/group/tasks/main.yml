@@ -1,4 +1,4 @@
 ---
 - ansible.builtin.import_tasks: 'configure.yml'
-  tags: [ 'role::group', 'task::configure' ]
+  tags: [ 'role::group', 'task::configure', 'role::group:configure' ]
 ...

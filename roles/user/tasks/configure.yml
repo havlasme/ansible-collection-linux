@@ -1,5 +1,5 @@
 ---
-- name: 'linux | user | create, update, or delete local user'
+- name: 'linux | user | configure | create, update, or delete local user'
   ansible.builtin.user:
     name: '{{ item.name | mandatory }}'
     append: '{{ item.append | d(omit) }}'

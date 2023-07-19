@@ -1,5 +1,5 @@
 ---
-- name: 'linux | hostname | set hostname'
+- name: 'linux | hostname | configure | set hostname'
   ansible.builtin.hostname:
     name: '{{ linux_hostname }}'
   when:

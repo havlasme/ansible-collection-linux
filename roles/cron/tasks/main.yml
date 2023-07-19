@@ -4,7 +4,7 @@
   tags: [ 'always' ]
 
 - ansible.builtin.import_tasks: 'install.yml'
-  tags: [ 'role::cron', 'task::install' ]
+  tags: [ 'role::cron', 'task::install', 'role::cron:install' ]
 - ansible.builtin.import_tasks: 'configure.yml'
-  tags: [ 'role::cron', 'task::configure' ]
+  tags: [ 'role::cron', 'task::configure', 'role::cron:configure' ]
 ...

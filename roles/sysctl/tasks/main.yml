@@ -4,7 +4,7 @@
   tags: [ 'always' ]
 
 - ansible.builtin.import_tasks: 'install.yml'
-  tags: [ 'role::sysctl', 'task::install' ]
+  tags: [ 'role::sysctl', 'task::install', 'role::sysctl:install' ]
 - ansible.builtin.import_tasks: 'configure.yml'
-  tags: [ 'role::sysctl', 'task::configure' ]
+  tags: [ 'role::sysctl', 'task::configure', 'role::sysctl:configure' ]
 ...

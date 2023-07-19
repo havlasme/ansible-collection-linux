@@ -1,4 +1,4 @@
 ---
 - ansible.builtin.import_tasks: 'configure.yml'
-  tags: [ 'role::motd', 'task::configure' ]
+  tags: [ 'role::motd', 'task::configure', 'role::motd:configure' ]
 ...

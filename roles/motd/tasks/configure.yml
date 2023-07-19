@@ -1,5 +1,5 @@
 ---
-- name: 'linux | motd | set motd message'
+- name: 'linux | motd | configure | set motd message'
   ansible.builtin.template:
     dest: '{{ linux_motd_file }}'
     src: '{{ linux_motd_template }}'

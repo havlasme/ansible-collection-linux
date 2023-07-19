@@ -1,4 +1,4 @@
 ---
 - ansible.builtin.import_tasks: 'configure.yml'
-  tags: [ 'role::hostname', 'task::configure' ]
+  tags: [ 'role::hostname', 'task::configure', 'role::hostname:configure' ]
 ...

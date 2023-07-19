@@ -1,4 +1,4 @@
 ---
 - ansible.builtin.import_tasks: 'configure.yml'
-  tags: [ 'role::timezone', 'task::configure' ]
+  tags: [ 'role::timezone', 'task::configure', 'role::timezone:configure' ]
 ...

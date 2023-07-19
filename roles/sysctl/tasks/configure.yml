@@ -1,5 +1,5 @@
 ---
-- name: 'linux | sysctl | set, update, or unset sysctl variable'
+- name: 'linux | sysctl | configure | set, update, or unset sysctl variable'
   ansible.posix.sysctl:
     name: '{{ item.name | mandatory }}'
     value: '{{ item.value | d(omit) }}'

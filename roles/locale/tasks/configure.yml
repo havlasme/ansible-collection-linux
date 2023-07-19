@@ -1,5 +1,5 @@
 ---
-- name: 'linux | locale | generate or delete locale'
+- name: 'linux | locale | configure | generate or delete locale'
   community.general.locale_gen:
     name: '{{ item.name | mandatory }}'
     state: '{{ item.state | d("present") }}'

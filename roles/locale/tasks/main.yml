@@ -4,7 +4,7 @@
   tags: [ 'always' ]
 
 - ansible.builtin.import_tasks: 'install.yml'
-  tags: [ 'role::locale', 'task::install' ]
+  tags: [ 'role::locale', 'task::install', 'role::locale:install' ]
 - ansible.builtin.import_tasks: 'configure.yml'
-  tags: [ 'role::locale', 'task::configure' ]
+  tags: [ 'role::locale', 'task::configure', 'role::locale:configure' ]
 ...

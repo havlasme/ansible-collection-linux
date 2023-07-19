@@ -1,6 +1,6 @@
 ---
 - ansible.builtin.import_tasks: 'configure.yml'
-  tags: [ 'role::user', 'task::configure' ]
+  tags: [ 'role::user', 'task::configure', 'role::user:configure' ]
 - ansible.builtin.import_tasks: 'authorized-key.yml'
-  tags: [ 'role::user', 'task::configure' ]
+  tags: [ 'role::user', 'task::configure', 'role::user:configure' ]
 ...
