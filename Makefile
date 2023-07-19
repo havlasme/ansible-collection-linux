@@ -8,10 +8,6 @@ GALAXY = @ansible-galaxy
 build:
 	$(GALAXY) collection build --output-path "$(DIST)"
 
-.PHONY: clean
-clean:
-	-rm --recursive "$(DIST)"
-
 .PHONY: install
 install:
 ifeq (, $(shell which yq))
@@ -43,3 +39,7 @@ test:
 	$(MAKE) -C roles/sysctl test
 	$(MAKE) -C roles/timezone test
 	$(MAKE) -C roles/user test
+
+.PHONY: clean
+clean:
+	-rm --recursive "$(DIST)"

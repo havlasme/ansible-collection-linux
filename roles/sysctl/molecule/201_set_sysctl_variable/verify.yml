@@ -8,7 +8,7 @@
     ansible.posix.sysctl:
       name: 'vm.swappiness'
       value: '10'
-      reload: falsee
+      reload: false
       state: 'present'
   - name: 'assert that `kernel.panic` variable is set'
     ansible.posix.sysctl:
