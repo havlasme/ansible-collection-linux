@@ -16,7 +16,7 @@ Role Variables
 # the sysctl package state ('present', 'latest')
 linux_sysctl_state: 'present'
 
-# the sysctl list
+# the sysctl variable list
 ## - name: string
 ##   value: string | d(omit)
 ##   reload: boolean | d(true)
