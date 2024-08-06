@@ -1,0 +1,13 @@
+---
+- name: 'prepare'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.user:
+      name: 'update_user'
+      comment: 'update_user'
+      shell: '/bin/sh'
+      uid: 915
+
+  - ansible.builtin.user:
+      name: 'delete_user'

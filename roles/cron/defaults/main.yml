@@ -1,0 +1,21 @@
+---
+# the cron package state ('present', 'latest') - 'absent' is not supported
+# * 'present' ensures that the package is installed
+# * 'latest' ensures that the latest version of the package is installed
+linux_cron__state: 'present'
+# should the cron service start at boot? (using systemd)
+linux_cron__enabled: true
+
+# the cron job list
+linux_cron__job: [ ]
+## - name: string
+##   job: string
+##   user: string | d('root')
+##   minute: string | d(omit)
+##   hour: string | d(omit)
+##   day: string | d(omit)
+##   month: string | d(omit)
+##   weekday: string | d(omit)
+##   cron_file: string | d(omit)
+##   state: enum('present', 'absent') | d('present')
+...

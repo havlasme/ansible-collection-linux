@@ -1,0 +1,12 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.include_role:
+      name: 'cron'
+    vars:
+      linux_cron__job:
+      - { name: 'create_cronjob', job: '/usr/bin/true' }
+      - { name: 'update_cronjob', job: '/usr/bin/true' }
+      - { name: 'delete_cronjob', job: '/usr/bin/true', state: 'absent' }

@@ -1,0 +1,40 @@
+---
+- name: 'Configure | Create, Update, or Delete a Linux User'
+  # @see https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
+  ansible.builtin.user:
+    name: '{{ item.name | mandatory }}'
+    comment: '{{ item.comment | d(omit) }}'
+    group: '{{ item.group | d(omit) }}'
+    groups: '{{ item.groups | d(omit) }}'
+    append: '{{ item.append | d(omit) }}'
+    home: '{{ item.home | d(omit) }}'
+    create_home: '{{ item.create_home | d(omit) }}'
+    local: '{{ item.local | d(omit) }}'
+    password: '{{ item.password | d(omit) }}'
+    password_lock: '{{ item.password_lock | d(omit) }}'
+    shell: '{{ item.shell | d(omit) }}'
+    system: '{{ item.system | d(omit) }}'
+    uid: '{{ item.uid | d(omit) }}'
+    umask: '{{ item.umask | d(omit) }}'
+    state: '{{ item.state | d("present") }}'
+  loop: '{{ linux_user }}'
+  loop_control:
+    label: '{{ item.name }} | {{ item.state | d("present") }}'
+  tags: [ 'role:user', 'role:user:configure', 'task:configure' ]
+
+- name: 'Configure | Create, Update, or Delete a User-Associated Authorized Key'
+  # @see https://docs.ansible.com/ansible/latest/collections/ansible/posix/authorized_key_module.html
+  ansible.posix.authorized_key:
+    key: '{{ item.1.key | mandatory }}'
+    key_options: '{{ item.1.key_options | d(omit) }}'
+    comment: '{{ item.1.comment | d(omit) }}'
+    exclusive: '{{ item.1.exclusive | d(omit) }}'
+    user: '{{ item.0.name | mandatory }}'
+    state: '{{ item.1.state | d("present") }}'
+  loop: '{{ linux_user | subelements("authorized_key", skip_missing="yes") }}'
+  loop_control:
+    label: '{{ item.0.name }} | {{ item.1.key }} | {{ item.1.state | d("present") }}'
+  when:
+  - item.0.state | d('present') == 'present'
+  tags: [ 'role:user', 'role:user:configure', 'task:configure' ]
+...

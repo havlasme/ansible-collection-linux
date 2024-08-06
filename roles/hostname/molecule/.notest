@@ -1,0 +1,1 @@
+Can't make a test case because hostnamectl tries to move the `/etc/hostname` file which is a volume in the container.

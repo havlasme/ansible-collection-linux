@@ -1,0 +1,69 @@
+---
+- name: 'Assert that the Cron State Value is Valid'
+  ansible.builtin.assert:
+    that:
+    - linux_cron__state in [ 'present', 'latest' ]
+    msg: 'The `linux_cron__state` must be one of [ "present", "latest" ] - "{{ linux_cron__state }}" is not supported'
+    quiet: true
+  tags: [ 'always' ]
+
+#
+# Install
+#
+
+- name: 'Install | Install or Update the Cron Support via APT'
+  ansible.builtin.apt:
+    name: '{{ linux_cron__package_name }}'
+    update_cache: true
+    cache_valid_time: 1800
+    state: '{{ linux_cron__state }}'
+  tags: [ 'role:cron', 'role:cron:install', 'task:install' ]
+
+- name: 'Install | Create the Cron Conf Directory Structure'
+  ansible.builtin.file:
+    dest: '{{ item.dest | mandatory }}'
+    mode: '{{ item.mode | d("0700") }}'
+    state: '{{ item.state | d("directory") }}'
+  loop:
+  - { dest: '/etc/cron.d' }
+  - { dest: '/etc/cron.daily' }
+  - { dest: '/etc/cron.hourly' }
+  - { dest: '/etc/cron.weekly' }
+  - { dest: '/etc/cron.monthly' }
+  - { dest: '/etc/crontab', mode: '0600', state: 'file' }
+  tags: [ 'role:cron', 'role:cron:install', 'task:install' ]
+
+#
+# Configure
+#
+
+- name: 'Configure | Create, Update, or Delete a Cron Job'
+  # @see https://docs.ansible.com/ansible/latest/collections/ansible/builtin/cron_module.html
+  ansible.builtin.cron:
+    name: '{{ item.name | mandatory }}'
+    job: '{{ item.job | mandatory }}'
+    user: '{{ item.user | d("root") }}'
+    minute: '{{ item.minute | d(omit) }}'
+    hour: '{{ item.hour | d(omit) }}'
+    day: '{{ item.day | d(omit) }}'
+    month: '{{ item.month | d(omit) }}'
+    weekday: '{{ item.weekday | d(omit) }}'
+    cron_file: '{{ item.cron_file | d(omit) }}'
+    state: '{{ item.state | d("present") }}'
+  loop: '{{ linux_cron__job }}'
+  loop_control:
+    label: '{{ item.job }} | {{ item.state | d("present") }}'
+  tags: [ 'role:cron', 'role:cron:configure', 'task:configure' ]
+
+#
+# Service
+#
+
+- name: 'Service | Start and Enable the Cron Service'
+  ansible.builtin.systemd:
+    name: '{{ linux_cron__service_name }}'
+    daemon_reload: true
+    enabled: '{{ linux_cron__enabled }}'
+    state: 'started'
+  tags: [ 'role:cron', 'role:cron:service', 'task:service' ]
+...

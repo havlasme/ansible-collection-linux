@@ -1,0 +1,38 @@
+---
+- name: 'Assert that the Sysctl State Value is Valid'
+  ansible.builtin.assert:
+    that:
+    - linux_sysctl__state in [ 'present', 'latest' ]
+    msg: 'The linux_sysctl__state must be in [ "present", "latest" ] - "{{ linux_sysctl__state }}" is not supported'
+    quiet: true
+  tags: [ 'always' ]
+
+#
+# Install
+#
+
+- name: 'Install | Install or Update the Sysctl Support via APT'
+  ansible.builtin.apt:
+    name: '{{ linux_sysctl__package_name }}'
+    update_cache: true
+    cache_valid_time: 1800
+    state: '{{ linux_sysctl__state }}'
+  tags: [ 'role:sysctl', 'role:sysctl:install', 'task:install' ]
+
+#
+# Configure
+#
+
+- name: 'Configure | Set, Update, or Unset a Kernel Tunable Variable'
+  # @see https://docs.ansible.com/ansible/latest/collections/ansible/posix/sysctl_module.html
+  ansible.posix.sysctl:
+    name: '{{ item.1.name | mandatory }}'
+    value: '{{ item.1.value | d(omit) }}'
+    reload: '{{ item.1.reload | d(true) }}'
+    sysctl_file: '{{ item.0.sysctl_file | d(omit) }}'
+    state: '{{ item.1.state | d("present") }}'
+  loop: '{{ linux_sysctl | subelements("tunable", skip_missing="yes") }}'
+  loop_control:
+    label: '{{ item.1.name }}: {{ item.1.value | d(omit) }} | {{ item.1.state | d("present") }}'
+  tags: [ 'role:sysctl', 'role:sysctl:configure', 'task:configure' ]
+...

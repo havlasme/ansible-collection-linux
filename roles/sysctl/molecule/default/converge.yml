@@ -1,0 +1,13 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.include_role:
+      name: 'sysctl'
+    vars:
+      linux_sysctl:
+      - tunable:
+        - { name: 'vm.overcommit_memory', value: '1', reload: false }
+        - { name: 'vm.swappiness', value: '10', reload: false }
+        - { name: 'vm.panic_on_oom', state: 'absent', reload: false }

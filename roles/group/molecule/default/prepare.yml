@@ -1,0 +1,11 @@
+---
+- name: 'prepare'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.group:
+      name: 'update_group'
+      gid: 915
+
+  - ansible.builtin.group:
+      name: 'delete_group'

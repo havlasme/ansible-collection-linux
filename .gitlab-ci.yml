@@ -1,0 +1,39 @@
+image:
+  name: quay.io/ansible/molecule:latest
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ''
+  ANSIBLE_FORCE_COLOR: 'true'
+
+services:
+- docker:dind
+
+workflow:
+  rules:
+  - if: $CI_COMMIT_BRANCH
+
+stages:
+- test
+
+molecule test:
+  image: python:3.10-bullseye
+  stage: test
+  before_script:
+  - apt update
+  - apt install -y fuse-overlayfs podman git jq
+  - echo -e '[storage]\ndriver = "overlay"\nrunroot = "/var/obj/podman/storage"\ngraphroot = "/var/obj/podman/storage"\n[storage.options.overlay]\nmount_program = "/usr/bin/fuse-overlayfs"\nmountopt = "nodev,metacopy=on"' > /etc/containers/storage.conf
+  - echo -e '[containers]\nnetns="host"\nuserns="host"\nipcns="host"\nutsns="host"\ncgroupns="host"\ncgroups="disabled"\n[engine]\ncgroup_manager = "cgroupfs"\nevents_logger = "file"' > /etc/containers/containers.conf
+  - podman info
+  - python3 --version
+  - python3 -m pip install ansible ansible-lint molecule molecule-plugins[podman] jmespath yamllint yq
+  - ansible --version
+  - molecule --version
+  - git clone https://gitlab.com/havlas.me/ansible-collection-ansible.git
+  - cd ansible-collection-ansible
+  - make clean build install
+  - cd ..
+  script:
+  - make test
+  rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

@@ -1,0 +1,25 @@
+---
+# the linux user list
+linux_user: [ ]
+## - name: string
+##   comment: string | d(omit)
+##   home: string | d(omit)
+##   create_home: boolean | d(omit)
+##   local: boolean | d(omit)
+##   password: string | d(omit)
+##   password_lock: boolean | d(omit)
+##   shell: string | d(omit)
+##   system: boolean | d(omit)
+##   uid: int | d(omit)
+##   umask: string | d(omit)
+##   group: string | d(omit)
+##   groups: string[] | d(omit)
+##   append: boolean | d(omit)
+##   state: enum('present', 'absent') | d('present')
+##   authorized_key: [ ]
+##   - key: string
+##     key_options: string | d(omit)
+##     comment: string | d(omit)
+##     exclusive: boolean | d(omit)
+##     state: enum('present', 'absent') | d('present')
+...

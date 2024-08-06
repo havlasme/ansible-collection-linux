@@ -1,0 +1,8 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.copy:
+      dest: '/etc/update-motd.d/20-uname'
+      content: ''

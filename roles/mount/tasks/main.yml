@@ -1,0 +1,15 @@
+---
+- name: 'Configure | Create, Update, or Delete a Mount'
+  # @see https://docs.ansible.com/ansible/latest/collections/ansible/posix/mount_module.html
+  ansible.posix.mount:
+    name: '{{ item.name | mandatory }}'
+    src: '{{ item.src | d(omit) }}'
+    boot: '{{ item.boot | d(omit) }}'
+    fstype: '{{ item.fstype | d(omit) }}'
+    opts: '{{ item.opts | d(omit) }}'
+    state: '{{ item.state | d("mounted") }}'
+  loop: '{{ linux_mount }}'
+  loop_control:
+    label: '{{ item.name }} | {{ item.state | d("present") }}'
+  tags: [ 'role:mount', 'role:mount:configure', 'task:configure' ]
+...

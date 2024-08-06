@@ -1,0 +1,12 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.include_role:
+      name: 'user'
+    vars:
+      linux_user:
+      - { name: 'create_user', comment: 'create_user', shell: '/bin/bash', uid: 1010 }
+      - { name: 'update_user', comment: 'update_user', shell: '/bin/bash', uid: 1015 }
+      - { name: 'delete_user', state: 'absent' }

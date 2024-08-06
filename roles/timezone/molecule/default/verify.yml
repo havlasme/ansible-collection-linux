@@ -1,0 +1,11 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the timezone is set to correct value'
+    community.general.timezone:
+      name: 'Etc/UTC'
+    register: result
+    failed_when: result.changed

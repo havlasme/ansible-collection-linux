@@ -1,0 +1,30 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the `create_user` user is present'
+    ansible.builtin.user:
+      name: 'create_user'
+      comment: 'create_user'
+      shell: '/bin/bash'
+      uid: 1010
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `update_user` user is present'
+    ansible.builtin.user:
+      name: 'update_user'
+      comment: 'update_user'
+      shell: '/bin/bash'
+      uid: 1015
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `delete_user` user is absent'
+    ansible.builtin.user:
+      name: 'delete_user'
+      state: 'absent'
+    register: result
+    failed_when: result.changed

@@ -1,0 +1,13 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - ansible.builtin.apt:
+      name: 'tzdata'
+      update_cache: true
+
+  - name: 'assert that the timezone is set to correct value'
+    community.general.timezone:
+      name: 'Europe/Bratislava'

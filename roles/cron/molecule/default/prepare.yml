@@ -1,0 +1,16 @@
+---
+- name: 'prepare'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.apt:
+      name: 'cron'
+      update_cache: true
+
+  - ansible.builtin.cron:
+      name: 'update_cronjob'
+      job: '/usr/bin/true'
+
+  - ansible.builtin.cron:
+      name: 'delete_cronjob'
+      job: '/usr/bin/true'

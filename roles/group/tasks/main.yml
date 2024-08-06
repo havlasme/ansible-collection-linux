@@ -1,0 +1,13 @@
+---
+- name: 'Configure | Create, Update, or Delete a Linux Group'
+  # @see https://docs.ansible.com/ansible/latest/collections/ansible/builtin/group_module.html
+  ansible.builtin.group:
+    name: '{{ item.name | mandatory }}'
+    gid: '{{ item.gid | d(omit) }}'
+    system: '{{ item.system | d(omit) }}'
+    state: '{{ item.state | d("present") }}'
+  loop: '{{ linux_group }}'
+  loop_control:
+    label: '{{ item.name }} | {{ item.state | d("present") }}'
+  tags: [ 'role:group', 'role:group:configure', 'task:configure' ]
+...

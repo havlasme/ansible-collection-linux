@@ -1,0 +1,12 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.include_role:
+      name: 'mount'
+    vars:
+      linux_mount:
+      - { name: '/mnt/create_mount', src: 'tmpfs', fstype: 'tmpfs', opts: 'rw' }
+      - { name: '/mnt/update_mount', src: 'tmpfs', fstype: 'tmpfs', opts: 'rw' }
+      - { name: '/mnt/delete_mount', state: 'absent' }

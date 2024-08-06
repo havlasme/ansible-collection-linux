@@ -1,0 +1,10 @@
+---
+# the mount list
+linux_mount: [ ]
+## - name: string
+##   src: string | d(omit)
+##   boot: boolean | d(omit)
+##   fstype: string | d(omit)
+##   opts: string | d(omit)
+##   state: enum('present', 'absent', 'mounted', 'umnounted', 'remounted') | d('mounted')
+...

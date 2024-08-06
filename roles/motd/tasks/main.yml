@@ -1,0 +1,37 @@
+---
+- name: 'Configure | Set the Message of the Day (MOTD) Content'
+  ansible.builtin.template:
+    dest: '{{ linux_motd__file }}'
+    src: '{{ linux_motd__template | mandatory }}'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  when:
+  - linux_motd__template is defined
+  tags: [ 'role:motd', 'role:motd:configure', 'task:configure' ]
+
+- name: 'Configure | Delete a Message of the Day (MOTD) Script'
+  ansible.builtin.file:
+    name: '{{ item.dest | mandatory | havlasme.ansible.abspath("/etc/update-motd.d") }}'
+    state: 'absent'
+  loop: '{{ linux_motd__update_motd | selectattr("state", "havlasme.ansible.is_absent") | list }}'
+  loop_control:
+    label: '{{ item.dest | mandatory }}'
+  when:
+  - linux_motd__update_motd is defined
+  tags: [ 'role:motd', 'role:motd:configure', 'task:configure' ]
+
+- name: 'Configure | Create or Update a Message of the Day (MOTD) Script'
+  ansible.builtin.template:
+    dest: '{{ item.dest | mandatory | havlasme.ansible.abspath("/etc/update-motd.d") }}'
+    src: '{{ item.tmpl | mandatory }}'
+    owner: 'root'
+    group: 'root'
+    mode: '0755'
+  loop: '{{ linux_motd__update_motd | selectattr("state", "havlasme.ansible.is_present") | list }}'
+  loop_control:
+    label: '{{ item.dest | mandatory }}'
+  when:
+  - linux_motd__update_motd is defined
+  tags: [ 'role:motd', 'role:motd:configure', 'task:configure' ]
+...

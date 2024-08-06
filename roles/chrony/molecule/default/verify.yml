@@ -1,0 +1,26 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the `chrony` package is installed'
+    ansible.builtin.apt:
+      name: 'chrony'
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `chrony` conf file is present'
+    ansible.builtin.file:
+      name: '/etc/chrony/chrony.conf'
+      state: 'file'
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `chrony` service is running and enabled'
+    ansible.builtin.systemd:
+      name: 'chrony.service'
+      enabled: yes
+      state: 'started'
+    register: result
+    failed_when: result.changed

@@ -1,0 +1,29 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the `vm.overcommit_memory` variable is set to expected value'
+    ansible.posix.sysctl:
+      name: 'vm.overcommit_memory'
+      value: '1'
+      reload: false
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `vm.swappiness` variable is set to expected value'
+    ansible.posix.sysctl:
+      name: 'vm.swappiness'
+      value: '10'
+      reload: false
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `vm.panic_on_oom` variable is unset'
+    ansible.posix.sysctl:
+      name: 'vm.panic_on_oom'
+      state: 'absent'
+      reload: false
+    register: result
+    failed_when: result.changed

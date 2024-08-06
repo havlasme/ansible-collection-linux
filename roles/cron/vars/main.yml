@@ -1,0 +1,6 @@
+---
+# the cron package name
+linux_cron__package_name: 'cron'
+# the cron service name
+linux_cron__service_name: 'cron.service'
+...

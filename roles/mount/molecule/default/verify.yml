@@ -1,0 +1,32 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that `create_mount` mount is mounted'
+    ansible.posix.mount:
+      name: '/mnt/create_mount'
+      src: 'tmpfs'
+      fstype: 'tmpfs'
+      opts: 'rw'
+      state: 'mounted'
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that `update_mount` mount is mounted'
+    ansible.posix.mount:
+      name: '/mnt/update_mount'
+      src: 'tmpfs'
+      fstype: 'tmpfs'
+      opts: 'rw'
+      state: 'mounted'
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that `delete_mount` mount is absent'
+    ansible.posix.mount:
+      name: '/mnt/delete_mount'
+      state: 'absent'
+    register: result
+    failed_when: result.changed

@@ -1,0 +1,19 @@
+#jinja2: trim_blocks: True, lstrip_blocks: True
+{{ ansible_managed | comment }}
+
+# ------------------------------------------------------------------------------
+# NTP/NTS Source Pool - should use at least 3 sources
+# @see https://www.ntppool.org/en/
+#
+{{ item.pool | d(chrony__pool) | mandatory }}
+
+driftfile /var/lib/chrony/chrony.drift
+{% if (ansible_distribution == "Debian" and ansible_distribution_version is version("11", ">=")) or
+      (ansible_distribution == "Ubuntu" and ansible_distribution_version is version("22.04", ">=")) %}
+ntsdumpdir /var/lib/chrony
+{% endif %}
+maxupdateskew 100.0
+makestep 1.0 3
+{% if item.rtcsync | d(chrony__rtcsync) | d(true) | bool %}
+rtcsync
+{% endif %}

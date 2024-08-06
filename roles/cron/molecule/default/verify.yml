@@ -1,0 +1,34 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the `create_cronjob` job is present'
+    ansible.builtin.cron:
+      name: 'create_cronjob'
+      job: '/usr/bin/true'
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `update_cronjob` job is present'
+    ansible.builtin.cron:
+      name: 'update_cronjob'
+      job: '/usr/bin/true'
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `delete_cronjob` job is absent'
+    ansible.builtin.cron:
+      name: 'delete_cronjob'
+      state: 'absent'
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `cron` service is running and enabled'
+    ansible.builtin.systemd:
+      name: 'cron.service'
+      enabled: yes
+      state: 'started'
+    register: result
+    failed_when: result.changed

@@ -1,0 +1,35 @@
+---
+- name: 'Assert that the Locales State Value is Valid'
+  ansible.builtin.assert:
+    that:
+    - linux_locale__state in [ 'present', 'latest' ]
+    msg: 'The linux_locale__state must be in [ "present", "latest" ] - "{{ linux_locale__state }}" is not supported'
+    quiet: true
+  tags: [ 'always' ]
+
+#
+# Install
+#
+
+- name: 'Install | Install or Update the Locales Support via APT'
+  ansible.builtin.apt:
+    name: '{{ linux_locale__package_name }}'
+    update_cache: true
+    cache_valid_time: 1800
+    state: '{{ linux_locale__state }}'
+  tags: [ 'role:locale', 'role:locale:install', 'task:install' ]
+
+#
+# Configure
+#
+
+- name: 'Configure | Install or Uninstall a Linux Locale'
+  # @see https://docs.ansible.com/ansible/latest/collections/community/general/locale_gen_module.html
+  community.general.locale_gen:
+    name: '{{ item.name | mandatory }}'
+    state: '{{ item.state | d("present") }}'
+  loop: '{{ linux_locale }}'
+  loop_control:
+    label: '{{ item.name }} | {{ item.state | d("present") }}'
+  tags: [ 'role:locale', 'role:locale:configure', 'task:configure' ]
+...

@@ -1,0 +1,10 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.include_role:
+      name: 'chrony'
+    vars:
+      chrony__rtcsync: false
+      chrony__environment: 'etc/default/chrony.j2'

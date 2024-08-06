@@ -1,0 +1,34 @@
+---
+- name: 'Assert that the TimeZone State Value is Valid'
+  ansible.builtin.assert:
+    that:
+    - linux_timezone__state in [ 'present', 'latest' ]
+    msg: 'The `linux_timezone__state` must be one of [ "present", "latest" ] - "{{ linux_timezone__state }}" is not supported'
+    quiet: true
+  tags: [ 'always' ]
+
+#
+# Install
+#
+
+- name: 'Install | Install or Update the TimeZone Support via APT'
+  ansible.builtin.apt:
+    name: '{{ linux_timezone__package_name }}'
+    update_cache: true
+    cache_valid_time: 1800
+    state: '{{ linux_timezone__state }}'
+  tags: [ 'role:timezone', 'role:timezone:install', 'task:install' ]
+
+#
+# Configure
+#
+
+- name: 'Configure | Set the TimeZone'
+  # @see https://docs.ansible.com/ansible/latest/collections/community/general/timezone_module.html
+  community.general.timezone:
+    name: '{{ linux_timezone | mandatory }}'
+    hwclock: '{{ linux_timezone__hwclock | d(omit) }}'
+  when:
+  - linux_timezone is defined
+  tags: [ 'role:timezone', 'role:timezone:configure', 'task:configure' ]
+...

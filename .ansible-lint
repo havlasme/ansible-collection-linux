@@ -1,0 +1,9 @@
+---
+exclude_paths:
+- meta/
+- molecule/
+
+skip_list:
+- name[missing]
+- name[template]
+- yaml[line-length]

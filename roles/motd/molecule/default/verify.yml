@@ -1,0 +1,29 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the motd content is set to correct value'
+    ansible.builtin.copy:
+      dest: '/etc/motd'
+      content: |
+        Test MOTD.
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `10-uname` script is present'
+    ansible.builtin.copy:
+      dest: '/etc/update-motd.d/10-uname'
+      content: |
+        #!/bin/sh
+        uname -snrvm
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `20-uname` script is absent'
+    ansible.builtin.file:
+      dest: '/etc/update-motd.d/20-uname'
+      state: 'absent'
+    register: result
+    failed_when: result.changed

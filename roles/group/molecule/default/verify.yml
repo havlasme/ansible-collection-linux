@@ -1,0 +1,25 @@
+---
+- name: 'verify'
+  hosts: 'all'
+  gather_facts: false
+
+  tasks:
+  - name: 'assert that the `create_group` group is present'
+    ansible.builtin.group:
+      name: 'create_group'
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `update_group` group is present'
+    ansible.builtin.group:
+      name: 'update_group'
+      gid: 1015
+    register: result
+    failed_when: result.changed
+
+  - name: 'assert that the `delete_group` group is absent'
+    ansible.builtin.group:
+      name: 'delete_group'
+      state: 'absent'
+    register: result
+    failed_when: result.changed

@@ -1,0 +1,4 @@
+---
+# the hostname support package name
+linux_hostname__package_name: 'hostname'
+...

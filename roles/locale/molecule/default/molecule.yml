@@ -1,0 +1,44 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: podman
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+platforms:
+- name: linux-locale-debian-bullseye
+  image: docker.io/havlasme/debian11-systemd-ansible:latest
+  pre_build_image: true
+  command: '/lib/systemd/systemd'
+  volumes:
+  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+- name: linux-locale-debian-bookworm
+  image: docker.io/havlasme/debian12-systemd-ansible:latest
+  pre_build_image: true
+  command: '/lib/systemd/systemd'
+  volumes:
+  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+- name: linux-locale-ubuntu-focal
+  image: docker.io/havlasme/ubuntu20-systemd-ansible:latest
+  pre_build_image: true
+  command: '/lib/systemd/systemd'
+  volumes:
+  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+- name: linux-locale-ubuntu-jammy
+  image: docker.io/havlasme/ubuntu22-systemd-ansible:latest
+  pre_build_image: true
+  command: '/lib/systemd/systemd'
+  volumes:
+  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+- name: linux-locale-ubuntu-noble
+  image: docker.io/havlasme/ubuntu24-systemd-ansible:latest
+  pre_build_image: true
+  command: '/lib/systemd/systemd'
+  volumes:
+  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+provisioner:
+  name: ansible
+verifier:
+  name: ansible

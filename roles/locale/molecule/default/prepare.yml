@@ -1,0 +1,11 @@
+---
+- name: 'prepare'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.apt:
+      name: 'locales'
+      update_cache: true
+
+  - community.general.locale_gen:
+      name: 'cs_CZ.UTF-8'

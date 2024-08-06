@@ -1,0 +1,4 @@
+---
+# the sysctl support package name
+linux_sysctl__package_name: 'procps'
+...

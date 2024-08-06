@@ -1,0 +1,12 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.include_role:
+      name: 'group'
+    vars:
+      linux_group:
+      - { name: 'create_group' }
+      - { name: 'update_group', gid: 1015 }
+      - { name: 'delete_group', state: 'absent' }

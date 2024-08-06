@@ -1,0 +1,11 @@
+---
+- name: 'converge'
+  hosts: 'all'
+
+  tasks:
+  - ansible.builtin.include_role:
+      name: 'locale'
+    vars:
+      linux_locale:
+      - { name: 'sk_SK.UTF-8' }
+      - { name: 'cs_CZ.UTF-8', state: 'absent' }

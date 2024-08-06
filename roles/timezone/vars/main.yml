@@ -1,0 +1,4 @@
+---
+# the timezone support package name
+linux_timezone__package_name: 'tzdata'
+...
