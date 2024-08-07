@@ -28,12 +28,12 @@ chrony__conf:
 ##   group: string | d('root')
 ##   mode: string | d('0755')
 ##   state: enum('present', 'absent', 'directory') | d('present')
-- dest: 'chrony.conf'
+- dest: '/etc/chrony'
+  state: 'directory'
+- dest: '/etc/chrony/chrony.conf'
   tmpl: 'etc/chrony/chrony.conf.j2'
 # chrony conf default template
 chrony__conf_template: '_content_.j2'
-# chrony conf directory
-chrony__confdir: '/etc/chrony'
 
 # chrony service environment template
 # this template will be deployed at `/etc/default/chrony` which is referenced by the systemd service

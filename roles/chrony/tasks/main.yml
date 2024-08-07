@@ -21,24 +21,13 @@
   - 'Chrony | Restart Service'
   tags: [ 'role:chrony', 'role:chrony:install', 'task:install' ]
 
-- name: 'Install | Create the Chrony Conf Directory Structure'
-  ansible.builtin.file:
-    dest: '{{ chrony__confdir }}'
-    owner: 'root'
-    group: 'root'
-    mode: '0755'
-    state: '{{ chrony_state == "absent" | ternary("absent", "directory") }}'
-  notify:
-  - 'Chrony | Restart Service'
-  tags: [ 'role:chrony', 'role:chrony:install', 'task:install' ]
-
 #
 # Configure
 #
 
 - name: 'Configure | Delete a Chrony Conf File'
   ansible.builtin.file:
-    dest: '{{ item.dest | mandatory | havlasme.ansible.abspath(chrony__confdir) }}'
+    dest: '{{ item.dest | mandatory }}'
     state: 'absent'
   loop: '{{ chrony__conf | selectattr("state", "havlasme.ansible.is_absent") | list }}'
   loop_control:
@@ -49,9 +38,9 @@
   - chrony__state != 'absent'
   tags: [ 'role:chrony', 'role:chrony:configure', 'task:configure' ]
 
-- name: 'Configure | Create a Chrony Conf Directory'
+- name: 'Configure | Create the Chrony Conf Directory Structure'
   ansible.builtin.file:
-    dest: '{{ item.dest | mandatory | havlasme.ansible.abspath(chrony__confdir) }}'
+    dest: '{{ item.dest | mandatory }}'
     owner: '{{ item.user | d("root") }}'
     group: '{{ item.group | d("root") }}'
     mode: '{{ item.mode | d("0755") }}'
@@ -67,7 +56,7 @@
 
 - name: 'Configure | Create or Update a Chrony Conf File'
   ansible.builtin.template:
-    dest: '{{ item.dest | mandatory | havlasme.ansible.abspath(chrony__confdir) }}'
+    dest: '{{ item.dest | mandatory }}'
     src: '{{ item.tmpl | d(chrony__conf_template) }}'
     owner: '{{ item.user | d("root") }}'
     group: '{{ item.group | d("root") }}'
