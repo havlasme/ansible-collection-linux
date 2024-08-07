@@ -1,6 +1,6 @@
 ---
-# the chrony package name
+# chrony package name
 chrony__package_name: 'chrony'
-# the chrony service name
+# chrony service name
 chrony__service_name: 'chrony.service'
 ...

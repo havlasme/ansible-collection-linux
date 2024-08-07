@@ -1,5 +1,5 @@
 ---
-# the linux user list
+# linux user list
 linux_user: [ ]
 ## - name: string
 ##   comment: string | d(omit)

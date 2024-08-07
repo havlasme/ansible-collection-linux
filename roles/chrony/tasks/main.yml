@@ -27,11 +27,9 @@
     owner: 'root'
     group: 'root'
     mode: '0755'
-    state: 'directory'
+    state: '{{ chrony_state == "absent" | ternary("absent", "directory") }}'
   notify:
   - 'Chrony | Restart Service'
-  when:
-  - chrony__state != 'absent'
   tags: [ 'role:chrony', 'role:chrony:install', 'task:install' ]
 
 #

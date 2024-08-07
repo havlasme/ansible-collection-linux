@@ -1,5 +1,5 @@
 ---
-# the linux group list
+# linux group list
 linux_group: [ ]
 ## - name: string
 ##   gid: int | d(omit)

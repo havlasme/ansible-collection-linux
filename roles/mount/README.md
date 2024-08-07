@@ -10,8 +10,10 @@ An [Ansible](https://www.ansible.com/) role to manage linux mounts on [Debian](h
 Role Variables
 --------------
 
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
 ```yaml
-# the mount list
+# mount list
 linux_mount: [ ]
 ## - name: string
 ##   src: string | d(omit)

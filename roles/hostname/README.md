@@ -11,13 +11,15 @@ An [Ansible](https://www.ansible.com/) role to set the linux hostname on [Debian
 Role Variables
 --------------
 
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
 ```yaml
-# the hostname package state ('present', 'latest') - 'absent' is not supported
+# hostname package state ('present', 'latest') - 'absent' is not supported
 # * 'present' ensures that the package is installed
 # * 'latest' ensures that the latest version of the package is installed
 linux_hostname__state: 'present'
 
-# the linux hostname
+# linux hostname
 #linux_hostname: 'hostname'
 ```
 

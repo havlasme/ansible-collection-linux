@@ -11,13 +11,15 @@ An [Ansible](https://www.ansible.com/) role to manage linux locales on [Debian](
 Role Variables
 --------------
 
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
 ```yaml
-# the locale state ('present', 'latest') - 'absent' is not supported
+# locale state ('present', 'latest') - 'absent' is not supported
 # * 'present' ensures that the package is installed
 # * 'latest' ensures that the latest version of the package is installed
 linux_locale__state: 'present'
 
-# the locale list
+# linux locale list
 linux_locale: [ ]
 ## - name: string
 ##   state: enum('present', 'absent') | d('present')

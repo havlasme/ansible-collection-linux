@@ -1,4 +1,4 @@
 ---
-# the locale support package name
+# locale support package name
 linux_locale__package_name: 'locales'
 ...

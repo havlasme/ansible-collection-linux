@@ -11,13 +11,15 @@ An [Ansible](https://www.ansible.com/) role to configure kernel tunable variable
 Role Variables
 --------------
 
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
 ```yaml
-# the sysctl package state ('present', 'latest') - 'absent' is not supported
+# sysctl package state ('present', 'latest') - 'absent' is not supported
 # * 'present' ensures that the package is installed
 # * 'latest' ensures that the latest version of the package is installed
 linux_sysctl__state: 'present'
 
-# the kernel tunable variable list
+# kernel tunable variable list
 linux_sysctl: [ ]
 ## - sysctl_file: string | d(omit)
 ##   tunable: dict[]

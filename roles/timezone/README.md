@@ -11,13 +11,15 @@ An [Ansible](https://www.ansible.com/) role to set the linux timezone on [Debian
 Role Variables
 --------------
 
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
 ```yaml
-# the timezone package state ('present', 'latest') - 'absent' is not supported
+# timezone package state ('present', 'latest') - 'absent' is not supported
 # * 'present' ensures that the package is installed
 # * 'latest' ensures that the latest version of the package is installed
 linux_timezone__state: 'present'
 
-# the timezone
+# linux timezone
 #linux_timezone: 'Etc/UTC'
 # set to UTC, to keep hardware clock in UTC timezone
 # set to local, to keep hardware clock in local timezone

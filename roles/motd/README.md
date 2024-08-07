@@ -11,13 +11,15 @@ An [Ansible](https://www.ansible.com/) role to set the message of the day on [De
 Role Variables
 --------------
 
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
 ```yaml
-# the motd conf file
+# motd conf file
 linux_motd__file: '/etc/motd'
-# the motd conf template
+# motd conf template
 #linux_motd__template: 'etc/motd.j2'
 
-# the update-motd script list
+# update-motd script list
 linux_motd__update_motd: [ ]
 ## - dest: string
 ##   tmpl: string

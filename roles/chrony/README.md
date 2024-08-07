@@ -8,12 +8,13 @@ An [Ansible](https://www.ansible.com/) role to install and configure the chrony 
 - Install, Update, or Uninstall the Chrony via APT
 - Create the Chrony Conf Directory Structure
 - Create, Update, or Delete a Chrony Conf File
+- Create or Update the Chrony Service Environment File
 - Start/Stop and Enable/Disable the Chrony Service
 
 Role Variables
 --------------
 
-Available variables are listed below, along with default values (see `defaults/main.yml`):
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
 
 ```yaml
 # chrony package state ('present', 'latest', 'absent')

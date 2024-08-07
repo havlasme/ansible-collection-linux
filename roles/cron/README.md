@@ -13,15 +13,17 @@ An [Ansible](https://www.ansible.com/) role to install the cron service and conf
 Role Variables
 --------------
 
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
 ```yaml
-# the cron package state ('present', 'latest') - 'absent' is not supported
+# cron package state ('present', 'latest') - 'absent' is not supported
 # * 'present' ensures that the package is installed
 # * 'latest' ensures that the latest version of the package is installed
 linux_cron__state: 'present'
 # should the cron service start at boot? (using systemd)
 linux_cron__enabled: true
 
-# the cron job list
+# cron job list
 linux_cron__job: [ ]
 ## - name: string
 ##   job: string

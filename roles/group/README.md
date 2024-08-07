@@ -10,8 +10,10 @@ An [Ansible](https://www.ansible.com/) role to manage linux system groups on [De
 Role Variables
 --------------
 
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
 ```yaml
-# the linux group list
+# linux group list
 linux_group: [ ]
 ## - name: string
 ##   gid: int | d(omit)

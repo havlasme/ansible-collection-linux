@@ -1,5 +1,5 @@
 ---
-# the mount list
+# mount list
 linux_mount: [ ]
 ## - name: string
 ##   src: string | d(omit)

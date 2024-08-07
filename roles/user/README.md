@@ -11,8 +11,10 @@ An [Ansible](https://www.ansible.com/) role to manage linux system users and ass
 Role Variables
 --------------
 
+Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
+
 ```yaml
-# the linux user list
+# linux user list
 linux_user: [ ]
 ## - name: string
 ##   comment: string | d(omit)
