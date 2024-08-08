@@ -25,9 +25,10 @@
   ansible.builtin.template:
     dest: '{{ item.dest | mandatory | havlasme.ansible.abspath("/etc/update-motd.d") }}'
     src: '{{ item.tmpl | mandatory }}'
-    owner: 'root'
-    group: 'root'
-    mode: '0755'
+    owner: '{{ item.user | d("root") }}'
+    group: '{{ item.group | d("root") }}'
+    mode: '{{ item.mode | d("0755") }}'
+    backup: '{{ item.backup | d(false) }}'
   loop: '{{ linux_motd__update_motd | selectattr("state", "havlasme.ansible.is_present") | list }}'
   loop_control:
     label: '{{ item.dest | mandatory }}'

@@ -23,6 +23,10 @@ linux_motd__file: '/etc/motd'
 linux_motd__update_motd: [ ]
 ## - dest: string
 ##   tmpl: string
+##   user: string | d('root')
+##   group: string | d('root')
+##   mode: string | d('0755')
+##   backup: boolean | d(false)
 ##   state: enum('present', 'absent') | d('present')
 ```
 
