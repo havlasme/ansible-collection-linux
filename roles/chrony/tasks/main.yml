@@ -11,7 +11,7 @@
 # Install
 #
 
-- name: 'Install | Install, Update, or Uninstall the Chrony via APT'
+- name: 'Install | {{ (chrony__state == "absent") | ternary("Uninstall", "Install or Update") }} the Chrony via APT'
   ansible.builtin.apt:
     name: '{{ chrony__package_name }}'
     update_cache: '{{ chrony__state != "absent" }}'
