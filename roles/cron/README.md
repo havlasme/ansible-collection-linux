@@ -33,6 +33,7 @@ linux_cron__job: [ ]
 ##   day: string | d(omit)
 ##   month: string | d(omit)
 ##   weekday: string | d(omit)
+##   backup: bool | d(false)
 ##   cron_file: string | d(omit)
 ##   state: enum('present', 'absent') | d('present')
 ```

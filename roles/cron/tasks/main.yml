@@ -48,6 +48,7 @@
     day: '{{ item.day | d(omit) }}'
     month: '{{ item.month | d(omit) }}'
     weekday: '{{ item.weekday | d(omit) }}'
+    backup: '{{ item.backup | d(false) }}'
     cron_file: '{{ item.cron_file | d(omit) }}'
     state: '{{ item.state | d("present") }}'
   loop: '{{ linux_cron__job }}'
