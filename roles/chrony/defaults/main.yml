@@ -24,6 +24,7 @@ chrony__rtcsync: true
 chrony__conf:
 ## - dest: string
 ##   tmpl: string | d(chrony__conf_template)
+##   backup: boolean | d(false)
 ##   user: string | d('root')
 ##   group: string | d('root')
 ##   mode: string | d('0755')

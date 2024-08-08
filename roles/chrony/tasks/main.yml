@@ -58,6 +58,7 @@
   ansible.builtin.template:
     dest: '{{ item.dest | mandatory }}'
     src: '{{ item.tmpl | d(chrony__conf_template) }}'
+    backup: '{{ item.backup | d(false) }}'
     owner: '{{ item.user | d("root") }}'
     group: '{{ item.group | d("root") }}'
     mode: '{{ item.mode | d("0644") }}'
