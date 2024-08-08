@@ -58,10 +58,10 @@
   ansible.builtin.template:
     dest: '{{ item.dest | mandatory }}'
     src: '{{ lookup("havlasme.ansible.template", item.tmpl | d(chrony__conf_template)) }}'
-    backup: '{{ item.backup | d(false) }}'
     owner: '{{ item.user | d("root") }}'
     group: '{{ item.group | d("root") }}'
     mode: '{{ item.mode | d("0644") }}'
+    backup: '{{ item.backup | d(false) }}'
   loop: '{{ chrony__conf | selectattr("state", "havlasme.ansible.is_present") | list }}'
   loop_control:
     label: '{{ item.dest | mandatory }}'
