@@ -57,7 +57,7 @@
 - name: 'Configure | Create or Update a Chrony Conf File'
   ansible.builtin.template:
     dest: '{{ item.dest | mandatory }}'
-    src: '{{ item.tmpl | d(chrony__conf_template) }}'
+    src: '{{ lookup("havlasme.ansible.template", item.tmpl | d(chrony__conf_template)) }}'
     backup: '{{ item.backup | d(false) }}'
     owner: '{{ item.user | d("root") }}'
     group: '{{ item.group | d("root") }}'
