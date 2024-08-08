@@ -21,8 +21,7 @@ chrony__pool: |-
 chrony__rtcsync: true
 
 # chrony conf list
-# ! the template file with the same name located in playbook's `templates` directory will override the template file
-# ! provided by the role, thus allowing to customize the template without the need to set the variable in the playbook
+# ! template lookup is done by the `havlasme.ansible.template` plugin
 chrony__conf:
 ## - dest: string
 ##   tmpl: string | d(chrony__conf_template)
