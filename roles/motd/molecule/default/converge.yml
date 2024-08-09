@@ -6,7 +6,7 @@
   - ansible.builtin.include_role:
       name: 'motd'
     vars:
-      linux_motd__template: 'etc/motd.j2'
-      linux_motd__update_motd:
+      linux_motd:
+      - { dest: '/etc/motd', tmpl: 'etc/motd.j2', mode: '0644' }
       - { dest: '/etc/update-motd.d/10-uname', tmpl: 'etc/update-motd.d/10-uname.j2' }
       - { dest: '/etc/update-motd.d/20-uname', state: 'absent' }

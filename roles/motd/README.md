@@ -5,8 +5,7 @@ Ansible Role - havlasme.linux.motd
 
 An [Ansible](https://www.ansible.com/) role to set the message of the day on [Debian](https://www.debian.org/) and [Ubuntu](https://www.ubuntu.com/) running [systemd](https://systemd.io/).
 
-- Set the Message of the Day (MOTD) Content
-- Create, Update or Delete a Dynamic MOTD Script
+- Create, Update or Delete a Message of the Day Conf File
 
 Role Variables
 --------------
@@ -14,13 +13,8 @@ Role Variables
 Available variables are listed below, along with default values (see [`defaults/main.yml`](defaults/main.yml)):
 
 ```yaml
-# motd conf file
-linux_motd__file: '/etc/motd'
-# motd conf template
-#linux_motd__template: 'etc/motd.j2'
-
-# update-motd script list
-linux_motd__update_motd: [ ]
+# motd conf list
+linux_motd: [ ]
 ## - dest: string
 ##   tmpl: string
 ##   user: string | d('root')
@@ -40,7 +34,9 @@ Example Playbook
   - ansible.builtin.include_role:
       name: 'havlasme.linux.motd'
     vars:
-      linux_motd__template: 'etc/motd.j2'
+      linux_motd: 
+      - dest: '/etc/motd.j2'
+        tmpl: 'etc/motd.j2'
 ```
 
 License

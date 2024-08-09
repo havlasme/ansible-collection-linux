@@ -1,11 +1,6 @@
 ---
-# motd conf file
-linux_motd__file: '/etc/motd'
-# motd conf template
-#linux_motd__template: 'etc/motd.j2'
-
-# update-motd script list
-linux_motd__update_motd: [ ]
+# motd conf list
+linux_motd: [ ]
 ## - dest: string
 ##   tmpl: string
 ##   user: string | d('root')
