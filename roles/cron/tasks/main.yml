@@ -19,7 +19,11 @@
     state: '{{ linux_cron__state }}'
   tags: [ 'role:cron', 'role:cron:install', 'task:install' ]
 
-- name: 'Install | Create the Cron Conf Directory Structure'
+#
+# Configure
+#
+
+- name: 'Configure | Create the Cron Conf Directory Structure'
   ansible.builtin.file:
     dest: '{{ item.dest | mandatory }}'
     mode: '{{ item.mode | d("0700") }}'
@@ -31,11 +35,7 @@
   - { dest: '/etc/cron.weekly' }
   - { dest: '/etc/cron.monthly' }
   - { dest: '/etc/crontab', mode: '0600', state: 'file' }
-  tags: [ 'role:cron', 'role:cron:install', 'task:install' ]
-
-#
-# Configure
-#
+  tags: [ 'role:cron', 'role:cron:configure', 'task:configure' ]
 
 - name: 'Configure | Create, Update, or Delete a Cron Job'
   # @see https://docs.ansible.com/ansible/latest/collections/ansible/builtin/cron_module.html
