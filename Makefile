@@ -18,7 +18,11 @@ endif
 
 .PHONY: publish
 publish:
+ifeq (, $(shell which yq))
+	$(error "no yq. try running pip3 install yq")
+else
 	$(GALAXY) collection publish "$(DIST)/$(NAMESPACE)-$(COLLECTION)-$(VERSION).tar.gz" --token "$(GALAXY_API_TOKEN)"
+endif
 
 .PHONY: lint
 lint:
