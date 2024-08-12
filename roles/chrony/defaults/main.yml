@@ -21,7 +21,7 @@ chrony__pool: |-
 chrony__rtcsync: true
 
 # chrony conf list
-# ! template lookup is done by the `havlasme.ansible.template` plugin
+#! template lookup is done by the `havlasme.ansible.template` plugin
 chrony__conf:
 ## - dest: string
 ##   tmpl: string | d(chrony__conf_template)
