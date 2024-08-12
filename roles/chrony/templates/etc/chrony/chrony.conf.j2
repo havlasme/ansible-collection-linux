@@ -2,10 +2,10 @@
 {{ ansible_managed | comment }}
 
 # ------------------------------------------------------------------------------
-# NTP/NTS Source Pool - should use at least 3 sources
+# NTP/NTS Source Pool; should use at least 4 sources
 # @see https://www.ntppool.org/en/
 #
-{{ item.pool | d(chrony__pool) | mandatory }}
+{{ item.pool | d(chrony__pool) | d('pool 0.pool.ntp.org iburst') }}
 
 driftfile /var/lib/chrony/chrony.drift
 {% if (ansible_distribution == "Debian" and ansible_distribution_version is version("11", ">=")) or

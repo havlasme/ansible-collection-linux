@@ -27,17 +27,6 @@ chrony__enabled: '{{ chrony__state != "absent" }}'
 # can ansible restart the chrony service? (using systemd)
 chrony__ansible_restart: true
 
-# chrony ntp pool list
-# this variable is referenced by the default `etc/chrony/chrony.conf.j2` template
-chrony__pool: |-
-  pool 0.pool.ntp.org iburst maxsources 4
-  pool 1.pool.ntp.org iburst maxsources 2
-  pool 2.pool.ntp.org iburst maxsources 4
-  pool 3.pool.ntp.org iburst maxsources 2
-# should the chrony synchronize the hardware clock?
-# this variable is referenced by the default `etc/chrony/chrony.conf.j2` template
-chrony__rtcsync: true
-
 # chrony conf list
 #! template lookup is done by the `havlasme.ansible.template` plugin
 chrony__conf:
@@ -58,6 +47,24 @@ chrony__conf_template: '_content_.j2'
 # chrony service environment template
 # this template will be deployed at `/etc/default/chrony` which is referenced by the systemd service
 #chrony__env_template: string | d(omit)
+```
+
+### `etc/chrony/chrony.conf`
+
+```yaml
+# chrony ntp pool list
+# this variable is referenced by the default `etc/chrony/chrony.conf.j2` template
+chrony__pool: |-
+  pool pool.ntp.org iburst
+# should the chrony synchronize the hardware clock?
+# this variable is referenced by the default `etc/chrony/chrony.conf.j2` template
+chrony__rtcsync: true
+```
+
+```yaml
+chrony__conf:
+- dest: '/etc/chrony/chrony.conf'
+  tmpl: 'etc/chrony/chrony.conf.j2'
 ```
 
 Example Playbook
