@@ -14,6 +14,7 @@ molecule test:
   before_script:
   - echo -e '[storage]\ndriver = "overlay"\nrunroot = "/var/obj/podman/storage"\ngraphroot = "/var/obj/podman/storage"\n[storage.options.overlay]\nmount_program = "/usr/bin/fuse-overlayfs"\nmountopt = "nodev,metacopy=on"' > /etc/containers/storage.conf
   - echo -e '[containers]\ncgroupns="host"\ncgroups="disabled"\n[engine]\ncgroup_manager = "cgroupfs"\nevents_logger = "file"' > /etc/containers/containers.conf
+  - echo $PATH
   - podman info
   - python3 --version
   - ansible --version
@@ -36,6 +37,7 @@ publish collection:
   variables:
     ANSIBLE_FORCE_COLOR: 'true'
   before_script:
+  - echo $PATH
   - python3 --version
   - ansible --version
   script:
