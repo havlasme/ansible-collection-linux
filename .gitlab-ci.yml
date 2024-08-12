@@ -40,6 +40,8 @@ publish collection:
   - ansible --version
   script:
   - make build publish
+  needs:
+  - molecule test
   artifacts:
     paths:
     - dist/*
