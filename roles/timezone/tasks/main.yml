@@ -23,7 +23,7 @@
 # Configure
 #
 
-- name: 'Configure | Set the TimeZone'
+- name: 'Configure | Set the Linux TimeZone'
   # @see https://docs.ansible.com/ansible/latest/collections/community/general/timezone_module.html
   community.general.timezone:
     name: '{{ linux_timezone | mandatory }}'

@@ -23,7 +23,7 @@
 # Configure
 #
 
-- name: 'Configure | Set the HostName'
+- name: 'Configure | Set the Linux HostName'
   # @see https://docs.ansible.com/ansible/latest/collections/ansible/builtin/hostname_module.html
   ansible.builtin.hostname:
     name: '{{ linux_hostname | mandatory }}'

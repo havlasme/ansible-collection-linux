@@ -6,7 +6,7 @@ Ansible Role - havlasme.linux.hostname
 An [Ansible](https://www.ansible.com/) role to set the linux hostname on [Debian](https://www.debian.org/) and [Ubuntu](https://www.ubuntu.com/) running [systemd](https://systemd.io/).
 
 - Install or Update the HostName Support via APT
-- Set the HostName
+- Set the Linux HostName
 
 Role Variables
 --------------

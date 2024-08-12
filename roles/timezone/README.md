@@ -6,7 +6,7 @@ Ansible Role - havlasme.linux.timezone
 An [Ansible](https://www.ansible.com/) role to set the linux timezone on [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com/) running [systemd](https://systemd.io/).
 
 - Install or Update the TimeZone Support via APT
-- Set the TimeZone
+- Set the Linux TimeZone
 
 Role Variables
 --------------
