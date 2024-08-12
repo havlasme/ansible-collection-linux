@@ -39,5 +39,5 @@ chrony__conf_template: '_content_.j2'
 
 # chrony service environment template
 # this template will be deployed at `/etc/default/chrony` which is referenced by the systemd service
-#chrony__environment: string | d(omit)
+#chrony__env_template: string | d(omit)
 ...

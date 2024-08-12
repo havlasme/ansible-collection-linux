@@ -74,14 +74,14 @@
 - name: 'Configure | Create or Update the Chrony Service Environment File'
   ansible.builtin.template:
     dest: '/etc/default/chrony'
-    src: '{{ chrony__environment | mandatory }}'
+    src: '{{ chrony__env_template | mandatory }}'
     owner: 'root'
     group: 'root'
     mode: '0644'
   notify:
   - 'Chrony | Restart Service'
   when:
-  - chrony__environment is defined
+  - chrony__env_template is defined
   - chrony__state != 'absent'
   tags: [ 'role:chrony', 'role:chrony:configure', 'task:configure' ]
 
