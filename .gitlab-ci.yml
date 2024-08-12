@@ -4,7 +4,7 @@ workflow:
 
 stages:
 - test
-- build
+- publish
 
 molecule test:
   image: havlasme/ansible-molecule-podman:latest
@@ -33,7 +33,7 @@ molecule test:
 
 publish collection:
   image: havlasme/ansible-molecule-podman:latest
-  stage: build
+  stage: publish
   variables:
     ANSIBLE_FORCE_COLOR: 'true'
   before_script:
