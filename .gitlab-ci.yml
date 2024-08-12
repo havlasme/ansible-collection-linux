@@ -20,7 +20,7 @@ molecule test:
   - ansible --version
   - molecule --version
   - apt update
-  - apt install -y git jq
+  - apt install -y git
   - python3 -m pip install jmespath
   - git clone https://gitlab.com/havlas.me/ansible-collection-ansible.git
   - cd ansible-collection-ansible
