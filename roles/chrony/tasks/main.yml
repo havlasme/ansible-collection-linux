@@ -38,7 +38,7 @@
   - chrony__state != 'absent'
   tags: [ 'role:chrony', 'role:chrony:configure', 'task:configure' ]
 
-- name: 'Configure | Create the Chrony Conf Directory Structure'
+- name: 'Configure | Create the Chrony Directory Structure'
   ansible.builtin.file:
     dest: '{{ item.dest | mandatory }}'
     owner: '{{ item.user | d("root") }}'

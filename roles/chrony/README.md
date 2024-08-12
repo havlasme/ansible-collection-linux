@@ -6,7 +6,7 @@ Ansible Role - havlasme.linux.chrony
 An [Ansible](https://www.ansible.com/) role to install and configure the chrony service on [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com/) running [systemd](https://systemd.io/).
 
 - Install, Update, or Uninstall the Chrony via APT
-- Create the Chrony Conf Directory Structure
+- Create the Chrony Directory Structure
 - Create, Update, or Delete a Chrony Conf File
 - Create or Update the Chrony Service Environment File
 - Start/Stop and Enable/Disable the Chrony Service

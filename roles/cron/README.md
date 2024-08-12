@@ -6,7 +6,7 @@ Ansible Role - havlasme.linux.cron
 An [Ansible](https://www.ansible.com/) role to install the cron service and configure cron jobs on [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com/) running [systemd](https://systemd.io/).
 
 - Install or Update the Cron Support via APT
-- Create the Cron Conf Directory Structure
+- Create the Cron Directory Structure
 - Create, Update, or Delete a Cron Job
 - Start and Enable the Cron Service
 

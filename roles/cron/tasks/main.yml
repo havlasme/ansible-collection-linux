@@ -23,7 +23,7 @@
 # Configure
 #
 
-- name: 'Configure | Create the Cron Conf Directory Structure'
+- name: 'Configure | Create the Cron Directory Structure'
   ansible.builtin.file:
     dest: '{{ item.dest | mandatory }}'
     mode: '{{ item.mode | d("0700") }}'
