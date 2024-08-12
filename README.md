@@ -22,11 +22,11 @@ An [Ansible](https://www.ansible.com/) collection of linux management content th
 Installation
 ------------
 
-```shell title="ansible-galaxy"
+```shell
 ansible-galaxy collection install havlasme.linux
 ```
 
-```yaml title="requirements.yml"
+```yaml
 ---
 collections:
 - name: 'havlasme.linux'
@@ -40,21 +40,21 @@ Development
 make build
 ```
 
-```shell title="ansible-lint"
+```shell
 make lint
 ```
 
-```shell title="molecule"
+```shell
 make test
 ```
 
 ### Setup Development Environment
 
-```shell title="via DNF"
+```shell
 sudo dnf install ansible jq yq python3-jmespath
 ```
 
-```shell title="via APT"
+```shell
 sudo apt install ansible jq yq python3-jmespath
 ```
 
