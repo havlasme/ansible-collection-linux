@@ -16,7 +16,7 @@ linux_user: [ ]
 ##   groups: string[] | d(omit)
 ##   append: boolean | d(omit)
 ##   state: enum('present', 'absent') | d('present')
-##   authorized_key: [ ]
+##   authorized_key: dict[] | d(omit)
 ##   - key: string
 ##     key_options: string | d(omit)
 ##     comment: string | d(omit)
