@@ -17,6 +17,13 @@
     register: result
     failed_when: result.changed
 
+  - name: 'assert that the `chrony` service env file is present'
+    ansible.builtin.file:
+      name: '/etc/default/chrony'
+      state: 'file'
+    register: result
+    failed_when: result.changed
+
   - name: 'assert that the `chrony` service is running and enabled'
     ansible.builtin.systemd:
       name: 'chrony.service'
