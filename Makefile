@@ -18,9 +18,6 @@ endif
 
 .PHONY: publish
 publish:
-ifndef GALAXY_API_TOKEN
- 	$(error "GALAXY_API_TOKEN is not set")
-endif
 	$(GALAXY) collection publish "$(DIST)/$(NAMESPACE)-$(COLLECTION)-$(VERSION).tar.gz" --token "$(GALAXY_API_TOKEN)"
 
 .PHONY: lint
