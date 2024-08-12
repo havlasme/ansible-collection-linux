@@ -1,4 +1,4 @@
-hatAnsible Role - havlasme.linux.user
+Ansible Role - havlasme.linux.user
 ==================================
 
 [![Apache-2.0 license][license-image]][license-link]
