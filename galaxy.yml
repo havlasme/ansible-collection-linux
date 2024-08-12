@@ -7,6 +7,8 @@ authors:
 - Tomáš Havlas <tomas@havlas.me>
 description: An Ansible collection of linux management content.
 license_file: LICENSE
+dependencies:
+  'havlasme.ansible': '*'
 tags:
 - linux
 repository: https://gitlab.com/havlas.me/ansible-collection-linux
