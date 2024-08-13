@@ -54,7 +54,7 @@
   - chrony__state != 'absent'
   tags: [ 'role:chrony', 'role:chrony:configure', 'task:configure' ]
 
-- name: 'Configure | Create or Update a Chrony Conf File'
+- name: 'Configure | Create and Update a Chrony Conf File'
   ansible.builtin.template:
     dest: '{{ item.dest | mandatory }}'
     src: '{{ lookup("havlasme.ansible.template", item.template | d(chrony__conf_template)) }}'
@@ -71,7 +71,7 @@
   - chrony__state != 'absent'
   tags: [ 'role:chrony', 'role:chrony:configure', 'task:configure' ]
 
-- name: 'Configure | Create or Update the Chrony Service Environment File'
+- name: 'Configure | Create and Update the Chrony Service Environment File'
   ansible.builtin.template:
     dest: '/etc/default/chrony'
     src: '{{ chrony__env_template | mandatory }}'
