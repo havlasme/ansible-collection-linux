@@ -31,7 +31,7 @@ chrony__ansible_restart: true
 #! template lookup is done by the `havlasme.ansible.template` plugin
 chrony__conf:
 ## - dest: string
-##   tmpl: string | d(chrony__conf_template)
+##   template: string | d(chrony__conf_template)
 ##   user: string | d('root')
 ##   group: string | d('root')
 ##   mode: string | d('0755')
@@ -40,7 +40,7 @@ chrony__conf:
 - dest: '/etc/chrony'
   state: 'directory'
 - dest: '/etc/chrony/chrony.conf'
-  tmpl: 'etc/chrony/chrony.conf.j2'
+  template: 'etc/chrony/chrony.conf.j2'
 # chrony conf default template
 chrony__conf_template: '_content_.j2'
 
@@ -64,7 +64,7 @@ chrony__rtcsync: true
 ```yaml
 chrony__conf:
 - dest: '/etc/chrony/chrony.conf'
-  tmpl: 'etc/chrony/chrony.conf.j2'
+  template: 'etc/chrony/chrony.conf.j2'
 ```
 
 Example Playbook
