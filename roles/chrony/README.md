@@ -37,8 +37,7 @@ chrony__conf:
 ##   mode: string | d('0755')
 ##   backup: boolean | d(false)
 ##   state: enum('present', 'absent', 'directory') | d('present')
-- dest: '/etc/chrony'
-  state: 'directory'
+- { dest: '/etc/chrony', state: 'directory' }
 - dest: '/etc/chrony/chrony.conf'
   template: 'etc/chrony/chrony.conf.j2'
 # chrony conf default template
@@ -56,7 +55,7 @@ chrony__conf_template: '_content_.j2'
 # this variable is referenced by the default `etc/chrony/chrony.conf.j2` template
 chrony__pool: |-
   pool pool.ntp.org iburst
-# should the chrony synchronize the hardware clock?
+# should the chrony periodically synchronize the hardware clock?
 # this variable is referenced by the default `etc/chrony/chrony.conf.j2` template
 chrony__rtcsync: true
 ```

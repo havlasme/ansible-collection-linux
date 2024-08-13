@@ -1,19 +1,62 @@
 #jinja2: trim_blocks: True, lstrip_blocks: True
 {{ ansible_managed | comment }}
 
-# ------------------------------------------------------------------------------
-# NTP/NTS Source Pool; should use at least 4 sources
-# @see https://www.ntppool.org/en/
+#######################################################################
+### SPECIFY THE NTP SERVERS
 #
-{{ item.pool | d(chrony__pool) | d('pool 0.pool.ntp.org iburst') }}
+# To ensure reliable time synchronization, chrony should use at least
+# three sources. Use the "iburst" option to quickly acquire time from
+# the source upon chrony start.
+# @see https://www.ntppool.org/en/
+
+{{ item.pool | d(chrony__pool) | d('pool pool.ntp.org iburst') }}
+
+#######################################################################
+### AVOIDING POTENTIALLY BOGUS CHANGES TO YOUR CLOCK
+#
+# Avoid changes being made to the system clock when the measurement
+# history is too erratic.
+
+maxupdateskew 100.0
+
+# Minimum number of selectable sources required to update the system
+# clock to ensure more reliable synchronization.
+
+minsources 2
+
+#######################################################################
+### FILENAMES ETC
+#
+# The 'driftfile' records the machine's clock gain/loss rate, enabling
+# chrony to adjust the system clock immediately upon chrony start.
 
 driftfile /var/lib/chrony/chrony.drift
 {% if (ansible_distribution == "Debian" and ansible_distribution_version is version("11", ">=")) or
       (ansible_distribution == "Ubuntu" and ansible_distribution_version is version("22.04", ">=")) %}
+
+# Cache the NTS cookies that chrony receives from sources to avoid
+# making an NTS-KE request upon chrony restart.
+
 ntsdumpdir /var/lib/chrony
 {% endif %}
-maxupdateskew 100.0
+
+#######################################################################
+### INITIAL CLOCK CORRECTION
+#
+# Apply an immediate time jump correction of the system clock at start
+# if it's significantly off. For error less than 1.0 second, it will
+# be gradually corrected by speeding up or slowing down machine's
+# clock until it is correct. Beware that some software may malfunction
+# if the system clock jumps, especially backwards.
+
 makestep 1.0 3
-{% if item.rtcsync | d(chrony__rtcsync) | d(true) | bool %}
+{% if item.rtcsync | d(chrony__rtcsync) | d(true) %}
+
+#######################################################################
+### REAL TIME CLOCK
+#
+# Enable a mode in which the RTC is periodically (every 11 minutes)
+# set to the system time.
+
 rtcsync
 {% endif %}

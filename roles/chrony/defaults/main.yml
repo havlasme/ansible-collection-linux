@@ -19,8 +19,7 @@ chrony__conf:
 ##   mode: string | d('0755')
 ##   backup: boolean | d(false)
 ##   state: enum('present', 'absent', 'directory') | d('present')
-- dest: '/etc/chrony'
-  state: 'directory'
+- { dest: '/etc/chrony', state: 'directory' }
 - dest: '/etc/chrony/chrony.conf'
   template: 'etc/chrony/chrony.conf.j2'
 # chrony conf default template
