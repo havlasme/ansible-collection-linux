@@ -5,8 +5,8 @@ Ansible Role - havlasme.linux.user
 
 An [Ansible](https://www.ansible.com/) role to manage linux system users and associated authorized keys on [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com/) running [systemd](https://systemd.io/).
 
-- Create, Update, or Delete a Linux User
-- Create, Update, or Delete a User-Associated Authorized Key
+- Create, Update, and Delete a Linux User
+- Create, Update, and Delete a User-Associated Authorized Key
 
 Role Variables
 --------------

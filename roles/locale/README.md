@@ -6,7 +6,7 @@ Ansible Role - havlasme.linux.locale
 An [Ansible](https://www.ansible.com/) role to manage linux locales on [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com/) running [systemd](https://systemd.io/).
 
 - Install or Update the Locales Support via APT
-- Install or Uninstall a Linux Locale
+- Install and Uninstall a Linux Locale
 
 Role Variables
 --------------

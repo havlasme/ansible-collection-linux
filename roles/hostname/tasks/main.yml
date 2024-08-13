@@ -11,7 +11,7 @@
 # Install
 #
 
-- name: 'Install | Install or Update the HostName Support via APT'
+- name: 'Install | {{ linux_hostname__state|replace("present","Install")|replace("latest","Update") }} the HostName Support via APT'
   ansible.builtin.apt:
     name: '{{ linux_hostname__package_name }}'
     update_cache: true

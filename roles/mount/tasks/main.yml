@@ -1,5 +1,5 @@
 ---
-- name: 'Configure | Create, Update, or Delete a Mount'
+- name: 'Configure | Create, Update, and Delete a Mount'
   # @see https://docs.ansible.com/ansible/latest/collections/ansible/posix/mount_module.html
   ansible.posix.mount:
     name: '{{ item.name | mandatory }}'

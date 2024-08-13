@@ -5,7 +5,7 @@ Ansible Role - havlasme.linux.mount
 
 An [Ansible](https://www.ansible.com/) role to manage linux mounts on [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com/) running [systemd](https://systemd.io/).
 
-- Create, Update, or Delete a Mount
+- Create, Update, and Delete a Mount
 
 Role Variables
 --------------

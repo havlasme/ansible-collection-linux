@@ -6,7 +6,7 @@ Ansible Role - havlasme.linux.sysctl
 An [Ansible](https://www.ansible.com/) role to configure kernel tunable variables via sysctl on [Debian](https://www.debian.org/) and [Ubuntu](https://ubuntu.com/) running [systemd](https://systemd.io/).
 
 - Install or Update the Sysctl Support via APT
-- Set, Update, or Unset a Kernel Tunable Variable
+- Set, Update, and Unset a Kernel Tunable Variable
 
 Role Variables
 --------------

@@ -11,7 +11,7 @@
 # Install
 #
 
-- name: 'Install | Install or Update the Cron Support via APT'
+- name: 'Install | {{ linux_cron__state|replace("present","Install")|replace("latest","Update") }} the Cron Support via APT'
   ansible.builtin.apt:
     name: '{{ linux_cron__package_name }}'
     update_cache: true
@@ -37,7 +37,7 @@
   - { dest: '/etc/crontab', mode: '0600', state: 'file' }
   tags: [ 'role:cron', 'role:cron:configure', 'task:configure' ]
 
-- name: 'Configure | Create, Update, or Delete a Cron Job'
+- name: 'Configure | Create, Update, and Delete a Cron Job'
   # @see https://docs.ansible.com/ansible/latest/collections/ansible/builtin/cron_module.html
   ansible.builtin.cron:
     name: '{{ item.name | mandatory }}'

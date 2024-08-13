@@ -7,7 +7,7 @@ An [Ansible](https://www.ansible.com/) role to install the cron service and conf
 
 - Install or Update the Cron Support via APT
 - Create the Cron Directory Structure
-- Create, Update, or Delete a Cron Job
+- Create, Update, and Delete a Cron Job
 - Start and Enable the Cron Service
 
 Role Variables

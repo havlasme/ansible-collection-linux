@@ -5,7 +5,7 @@ Ansible Role - havlasme.linux.motd
 
 An [Ansible](https://www.ansible.com/) role to set the message of the day on [Debian](https://www.debian.org/) and [Ubuntu](https://www.ubuntu.com/) running [systemd](https://systemd.io/).
 
-- Create, Update or Delete a Message of the Day Conf File
+- Create, Update and Delete a Message of the Day Conf File
 
 Role Variables
 --------------

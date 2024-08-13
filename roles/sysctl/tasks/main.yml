@@ -11,7 +11,7 @@
 # Install
 #
 
-- name: 'Install | Install or Update the Sysctl Support via APT'
+- name: 'Install | {{ linux_sysctl__state|replace("present","Install")|replace("latest","Update") }} the Sysctl Support via APT'
   ansible.builtin.apt:
     name: '{{ linux_sysctl__package_name }}'
     update_cache: true
@@ -23,7 +23,7 @@
 # Configure
 #
 
-- name: 'Configure | Set, Update, or Unset a Kernel Tunable Variable'
+- name: 'Configure | Set, Update, and Unset a Kernel Tunable Variable'
   # @see https://docs.ansible.com/ansible/latest/collections/ansible/posix/sysctl_module.html
   ansible.posix.sysctl:
     name: '{{ item.1.name | mandatory }}'

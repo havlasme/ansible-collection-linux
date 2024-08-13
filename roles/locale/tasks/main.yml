@@ -11,7 +11,7 @@
 # Install
 #
 
-- name: 'Install | Install or Update the Locales Support via APT'
+- name: 'Install | {{ linux_locale__state|replace("present","Install")|replace("latest","Update") }} the Locales Support via APT'
   ansible.builtin.apt:
     name: '{{ linux_locale__package_name }}'
     update_cache: true
@@ -23,7 +23,7 @@
 # Configure
 #
 
-- name: 'Configure | Install or Uninstall a Linux Locale'
+- name: 'Configure | Install and Uninstall a Linux Locale'
   # @see https://docs.ansible.com/ansible/latest/collections/community/general/locale_gen_module.html
   community.general.locale_gen:
     name: '{{ item.name | mandatory }}'

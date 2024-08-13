@@ -8,7 +8,7 @@
     label: '{{ item.dest | mandatory }}'
   tags: [ 'role:motd', 'role:motd:configure', 'task:configure' ]
 
-- name: 'Configure | Create or Update a Message of the Day (MOTD) Conf File'
+- name: 'Configure | Create and Update a Message of the Day (MOTD) Conf File'
   ansible.builtin.template:
     dest: '{{ item.dest | mandatory }}'
     src: '{{ item.tmpl | mandatory }}'

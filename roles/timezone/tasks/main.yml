@@ -11,7 +11,7 @@
 # Install
 #
 
-- name: 'Install | Install or Update the TimeZone Support via APT'
+- name: 'Install | {{ linux_timezone__state|replace("present","Install")|replace("latest","Update") }} the TimeZone Support via APT'
   ansible.builtin.apt:
     name: '{{ linux_timezone__package_name }}'
     update_cache: true

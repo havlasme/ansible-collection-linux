@@ -1,5 +1,5 @@
 ---
-- name: 'Configure | Create, Update, or Delete a Linux User'
+- name: 'Configure | Create, Update, and Delete a Linux User'
   # @see https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
   ansible.builtin.user:
     name: '{{ item.name | mandatory }}'
@@ -22,7 +22,7 @@
     label: '{{ item.name }} | {{ item.state | d("present") }}'
   tags: [ 'role:user', 'role:user:configure', 'task:configure' ]
 
-- name: 'Configure | Create, Update, or Delete a User-Associated Authorized Key'
+- name: 'Configure | Create, Update, and Delete a User-Associated Authorized Key'
   # @see https://docs.ansible.com/ansible/latest/collections/ansible/posix/authorized_key_module.html
   ansible.posix.authorized_key:
     key: '{{ item.1.key | mandatory }}'
